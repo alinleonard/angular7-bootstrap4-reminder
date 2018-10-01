@@ -16,7 +16,7 @@ import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,5 +32,4 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })
-export class AppModule {
-}
+export class AppModule { }
