@@ -8,14 +8,14 @@ export const COSMIC_THEME = {
       '#31ffad',
       '#7bff24',
       '#fff024',
-      '#f7bd59',
+      '#f7bd59'
     ],
 
     solar: {
       gradientLeft: '#7bff24',
       gradientRight: '#2ec7fe',
       shadowColor: '#19977E',
-      radius: ['70%', '90%'],
+      radius: ['70%', '90%']
     },
 
     traffic: {
@@ -34,7 +34,7 @@ export const COSMIC_THEME = {
       shadowLineDarkBg: '#655ABD',
       shadowLineShadow: 'rgba(33, 7, 77, 0.5)',
       gradFrom: 'rgba(118, 89, 255, 0.4)',
-      gradTo: 'rgba(164, 84, 255, 0.5)',
+      gradTo: 'rgba(164, 84, 255, 0.5)'
     },
 
     electricity: {
@@ -59,14 +59,14 @@ export const COSMIC_THEME = {
 
       areaGradFrom: 'rgba(188, 92, 255, 0.5)',
       areaGradTo: 'rgba(188, 92, 255, 0)',
-      shadowLineDarkBg: '#a695ff',
+      shadowLineDarkBg: '#a695ff'
     },
 
     bubbleMap: {
       titleColor: '#ffffff',
       areaColor: '#2c2961',
       areaHoverColor: '#a1a1e5',
-      areaBorderColor: '#654ddb',
+      areaBorderColor: '#654ddb'
     },
 
     echarts: {
@@ -76,12 +76,12 @@ export const COSMIC_THEME = {
       splitLineColor: '#342e73',
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
       tooltipBackgroundColor: '#6a7985',
-      areaOpacity: '1',
+      areaOpacity: '1'
     },
 
     chartjs: {
       axisLineColor: '#a1a1e5',
-      textColor: '#ffffff',
-    },
-  },
+      textColor: '#ffffff'
+    }
+  }
 };

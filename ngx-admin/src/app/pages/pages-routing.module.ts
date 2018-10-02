@@ -13,27 +13,27 @@ const routes: Routes = [{
   children: [
     {
       path: 'dashboard',
-      component: DashboardComponent,
+      component: DashboardComponent
     },
     {
       path: 'reminders',
-      component: RemindersComponent,
+      component: RemindersComponent
     },
     {
       path: '',
       redirectTo: 'dashboard',
-      pathMatch: 'full',
-    }, 
+      pathMatch: 'full'
+    },
     {
       path: '**',
-      component: NotFoundComponent,
+      component: NotFoundComponent
     }
-  ],
+  ]
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class PagesRoutingModule {
 }

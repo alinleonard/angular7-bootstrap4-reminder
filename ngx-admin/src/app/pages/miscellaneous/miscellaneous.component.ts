@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'ngx-miscellaneous',
   template: `
     <router-outlet></router-outlet>
-  `,
+  `
 })
 export class MiscellaneousComponent {
 }

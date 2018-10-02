@@ -6,7 +6,7 @@ import {
   NbLogoutComponent,
   NbRegisterComponent,
   NbRequestPasswordComponent,
-  NbResetPasswordComponent,
+  NbResetPasswordComponent
 } from '@nebular/auth';
 
 const routes: Routes = [
@@ -17,41 +17,41 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: NbLoginComponent,
+        component: NbLoginComponent
       },
       {
         path: 'login',
-        component: NbLoginComponent,
+        component: NbLoginComponent
       },
       {
         path: 'register',
-        component: NbRegisterComponent,
+        component: NbRegisterComponent
       },
       {
         path: 'logout',
-        component: NbLogoutComponent,
+        component: NbLogoutComponent
       },
       {
         path: 'request-password',
-        component: NbRequestPasswordComponent,
+        component: NbRequestPasswordComponent
       },
       {
         path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
-    ],
+        component: NbResetPasswordComponent
+      }
+    ]
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '**', redirectTo: 'pages' }
 ];
 
 const config: ExtraOptions = {
-  useHash: true,
+  useHash: true
 };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
 }

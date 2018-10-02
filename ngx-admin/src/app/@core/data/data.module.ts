@@ -6,24 +6,24 @@ import { StateService } from './state.service';
 
 const SERVICES = [
   UserService,
-  StateService,
+  StateService
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   providers: [
-    ...SERVICES,
-  ],
+    ...SERVICES
+  ]
 })
 export class DataModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: DataModule,
       providers: [
-        ...SERVICES,
-      ],
+        ...SERVICES
+      ]
     };
   }
 }

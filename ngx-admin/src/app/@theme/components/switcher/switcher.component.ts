@@ -22,7 +22,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           {{secondValueLabel}}
       </span>
     </label>
-  `,
+  `
 })
 export class SwitcherComponent {
   @Input() firstValue: any;

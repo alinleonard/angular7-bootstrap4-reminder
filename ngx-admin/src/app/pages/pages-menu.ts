@@ -5,7 +5,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',
-    home: true,
+    home: true
   },
   {
     title: 'Reminders',
@@ -14,7 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'FEATURES',
-    group: true,
+    group: true
   },
   {
     title: 'Auth',
@@ -22,20 +22,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Login',
-        link: '/auth/login',
+        link: '/auth/login'
       },
       {
         title: 'Register',
-        link: '/auth/register',
+        link: '/auth/register'
       },
       {
         title: 'Request Password',
-        link: '/auth/request-password',
+        link: '/auth/request-password'
       },
       {
         title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },
+        link: '/auth/reset-password'
+      }
+    ]
+  }
 ];

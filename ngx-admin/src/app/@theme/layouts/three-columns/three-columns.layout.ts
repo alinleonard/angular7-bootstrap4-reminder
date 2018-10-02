@@ -35,7 +35,7 @@ import { takeWhile } from 'rxjs/operators/takeWhile';
         <ngx-footer></ngx-footer>
       </nb-layout-footer>
     </nb-layout>
-  `,
+  `
 })
 export class ThreeColumnsLayoutComponent implements OnDestroy {
 

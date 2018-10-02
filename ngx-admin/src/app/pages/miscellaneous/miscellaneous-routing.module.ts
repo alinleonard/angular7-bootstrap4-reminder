@@ -9,17 +9,17 @@ const routes: Routes = [{
   component: MiscellaneousComponent,
   children: [{
     path: '404',
-    component: NotFoundComponent,
-  }],
+    component: NotFoundComponent
+  }]
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class MiscellaneousRoutingModule { }
 
 export const routedComponents = [
   MiscellaneousComponent,
-  NotFoundComponent,
+  NotFoundComponent
 ];

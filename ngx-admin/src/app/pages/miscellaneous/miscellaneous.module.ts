@@ -5,10 +5,10 @@ import { MiscellaneousRoutingModule, routedComponents } from './miscellaneous-ro
 @NgModule({
   imports: [
     ThemeModule,
-    MiscellaneousRoutingModule,
+    MiscellaneousRoutingModule
   ],
   declarations: [
-    ...routedComponents,
-  ],
+    ...routedComponents
+  ]
 })
 export class MiscellaneousModule { }

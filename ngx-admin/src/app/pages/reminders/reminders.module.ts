@@ -5,10 +5,10 @@ import { RemindersComponent } from './reminders.component';
 
 @NgModule({
     imports: [
-        ThemeModule,
+        ThemeModule
     ],
     declarations: [
-        RemindersComponent,
-    ],
+        RemindersComponent
+    ]
 })
 export default class RemindersModule { }

@@ -8,7 +8,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import RemindersModule from './reminders/reminders.module';
 
 const PAGES_COMPONENTS = [
-  PagesComponent,
+  PagesComponent
 ];
 
 @NgModule({
@@ -17,11 +17,11 @@ const PAGES_COMPONENTS = [
     ThemeModule,
     DashboardModule,
     MiscellaneousModule,
-    RemindersModule,
+    RemindersModule
   ],
   declarations: [
     ...PAGES_COMPONENTS
-  ],
+  ]
 })
 export class PagesModule {
 }

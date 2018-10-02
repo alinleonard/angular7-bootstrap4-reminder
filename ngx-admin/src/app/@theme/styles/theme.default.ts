@@ -9,14 +9,14 @@ export const DEFAULT_THEME = {
       '#42db7d',
       '#42db7d',
       '#42db7d',
-      '#42db7d',
+      '#42db7d'
     ],
 
     solar: {
       gradientLeft: '#42db7d',
       gradientRight: '#42db7d',
       shadowColor: 'rgba(0, 0, 0, 0)',
-      radius: ['80%', '90%'],
+      radius: ['80%', '90%']
     },
 
     traffic: {
@@ -35,7 +35,7 @@ export const DEFAULT_THEME = {
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
       gradFrom: '#ebeef2',
-      gradTo: '#ebeef2',
+      gradTo: '#ebeef2'
     },
 
     electricity: {
@@ -60,14 +60,14 @@ export const DEFAULT_THEME = {
 
       areaGradFrom: 'rgba(235, 238, 242, 0.5)',
       areaGradTo: 'rgba(235, 238, 242, 0.5)',
-      shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
+      shadowLineDarkBg: 'rgba(0, 0, 0, 0)'
     },
 
     bubbleMap: {
       titleColor: '#484848',
       areaColor: '#dddddd',
       areaHoverColor: '#cccccc',
-      areaBorderColor: '#ebeef2',
+      areaBorderColor: '#ebeef2'
     },
 
     echarts: {
@@ -77,12 +77,12 @@ export const DEFAULT_THEME = {
       splitLineColor: '#ebeef2',
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
       tooltipBackgroundColor: '#6a7985',
-      areaOpacity: '0.7',
+      areaOpacity: '0.7'
     },
 
     chartjs: {
       axisLineColor: '#cccccc',
-      textColor: '#484848',
-    },
-  },
+      textColor: '#484848'
+    }
+  }
 };
