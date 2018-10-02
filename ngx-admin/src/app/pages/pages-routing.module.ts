@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { RemindersComponent } from './reminders/reminders.component';
+
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -13,10 +16,18 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
+      path: 'reminders',
+      component: RemindersComponent,
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',
-    },
+    }, 
+    {
+      path: '**',
+      component: NotFoundComponent,
+    }
   ],
 }];
 

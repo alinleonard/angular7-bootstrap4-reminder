@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'reminders',
+  selector: 'ngx-reminders',
+  styleUrls: ['./reminders.component.scss'],
   templateUrl: './reminders.component.html',
-  styleUrls: ['./reminders.component.scss']
 })
-export class RemindersComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class RemindersComponent {
 }

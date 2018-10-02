@@ -8,6 +8,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Reminders',
+    icon: 'nb-keypad',
+    link: '/pages/reminders'
+  },
+  {
     title: 'FEATURES',
     group: true,
   },
