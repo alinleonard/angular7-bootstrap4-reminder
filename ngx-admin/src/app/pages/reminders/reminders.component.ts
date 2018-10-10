@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RemindersService, Reminder } from './reminders.service';
-import { Observable } from 'rxjs';
+import { RemindersService } from './reminders.service';
 
 @Component({
   selector: 'ngx-reminders',
@@ -53,7 +52,7 @@ export class RemindersComponent implements OnInit {
       error => this.error = error
     );
   }
-  
+
   onCreateConfirm(event): void {
     event.confirm.resolve();
   }
@@ -63,7 +62,7 @@ export class RemindersComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
-    if(window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();
