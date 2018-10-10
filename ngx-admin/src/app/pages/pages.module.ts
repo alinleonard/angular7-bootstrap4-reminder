@@ -5,7 +5,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
-import RemindersModule from './reminders/reminders.module';
+import { RemindersModule } from './reminders/reminders.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent
