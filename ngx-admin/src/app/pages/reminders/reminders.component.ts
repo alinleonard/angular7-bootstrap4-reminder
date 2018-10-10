@@ -55,14 +55,10 @@ export class RemindersComponent implements OnInit {
   }
   
   onCreateConfirm(event): void {
-    console.log(event);
-    event.source
-    debugger;
     event.confirm.resolve();
   }
 
   onSaveConfirm(event): void {
-    console.log(event);
     event.confirm.resolve();
   }
 
