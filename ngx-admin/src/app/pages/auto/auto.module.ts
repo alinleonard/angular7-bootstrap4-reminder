@@ -9,6 +9,7 @@ import { AutoDashboardComponent } from './dashboard/dashboard.component';
 import { HistoryService } from '../components/history-tree/history.service';
 import { HistoryTreeComponent } from '../components/history-tree/history-tree.component';
 import { HistoryItemComponent } from '../components/history-item/history-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const componets = [
   AutoComponent,
@@ -20,6 +21,7 @@ const componets = [
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     ThemeModule,
     AutoRoutingModule
   ],

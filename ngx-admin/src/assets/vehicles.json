@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "123123123123",
+        "type": "car",
+        "vehicle_name": "My Car",
+        "manufacturer": "audi",
+        "model": "b5",
+        "license_plate": "br-12-hjg",
+        "year": "1999",
+        "chasis_number": "123456789",
+        "vin": "123456789",
+        "note": "note"
+    },
+    {
+        "_id": "123123123123",
+        "type": "car",
+        "vehicle_name": "N.A",
+        "manufacturer": "BMW",
+        "model": "Seria 3",
+        "license_plate": "bv-92-xjg",
+        "year": "2015",
+        "chasis_number": "123456789",
+        "vin": "123456789",
+        "note": "note"
+    } 
+]
