@@ -8,9 +8,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true
   },
   {
-    title: 'Reminders',
-    icon: 'nb-keypad',
-    link: '/pages/reminders'
+    title: 'AUTO',
+    group: true
+  },
+  {
+    title: 'Home',
+    icon: 'ion-home',
+    link: '/pages/auto/'
+  },
+  {
+    title: 'Vehicles',
+    icon: 'ion-android-car',
+    link: '/pages/auto/vehicles-add'
   },
   {
     title: 'FEATURES',

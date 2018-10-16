@@ -73,6 +73,7 @@
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "6.0.90",
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "codelyzer": "4.0.2",
     "conventional-changelog-cli": "1.3.4",
     "husky": "0.13.3",

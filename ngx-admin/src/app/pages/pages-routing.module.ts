@@ -5,7 +5,6 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { RemindersComponent } from './reminders/reminders.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,8 +15,8 @@ const routes: Routes = [{
       component: DashboardComponent
     },
     {
-      path: 'reminders',
-      component: RemindersComponent
+      path: 'auto',
+      loadChildren: './auto/auto.module#AutoModule'
     },
     {
       path: '',
