@@ -10,24 +10,32 @@ import { HistoryService } from '../components/history-tree/history.service';
 import { HistoryTreeComponent } from '../components/history-tree/history-tree.component';
 import { HistoryItemComponent } from '../components/history-item/history-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AutoRemindersComponent } from './reminders/reminders.component';
+
+import { FilterRememberOfTypePipe } from './filters/filter-remember-of-type.pipe';
+
+import { ToasterModule } from 'angular2-toaster';
 
 const componets = [
   AutoComponent,
   VehicleAddComponent,
   AutoDashboardComponent,
   HistoryTreeComponent,
-  HistoryItemComponent
+  HistoryItemComponent,
+  AutoRemindersComponent
 ];
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     ThemeModule,
-    AutoRoutingModule
+    AutoRoutingModule,
+    ToasterModule.forRoot()
   ],
   providers: [HistoryService],
   declarations: [
-    ...componets
+    ...componets,
+    FilterRememberOfTypePipe
   ]
 })
 

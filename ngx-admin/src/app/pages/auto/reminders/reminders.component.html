@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Reminder</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (ngSubmit)="send()">
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">
+                <i class="fa fa-money-bill" *ngIf="type.value == reminderTypes[0]"></i>
+                <i class="fa fa-car-battery" *ngIf="type.value == reminderTypes[1]"></i>
+            </label>
+            <div class="col-sm-11">
+              <select 
+                class="form-control" 
+                ngbTooltip="Select the type of reminder that this should be about"
+                container="body"
+                placement="top"
+                tooltipClass="my-custom-class"
+                formControlName="type">
+                <option *ngFor="let reminderType of reminderTypes" [value]="reminderType">{{reminderType}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="type.value != null">
+            <label class="col-sm-1 col-form-label">
+              <i class="fa fa-car" *ngIf="type.value == reminderTypes[0]"></i>
+              <i class="fa fa-car" *ngIf="type.value == reminderTypes[1]"></i>
+            </label>
+            <div class="col-sm-11">
+              <select 
+                class="form-control" 
+                *ngIf="type.value == reminderTypes[0]"
+                ngbTooltip="Select the expense that you will need to have on your vehicle"
+                container="body"
+                placement="top"
+                formControlName="expense">
+                <option [ngValue]="null">Type of Expense</option>
+                <option *ngFor="let type of typeOfExpenses" [value]="type">{{ type }}</option>
+              </select>
+              <select 
+                class="form-control" 
+                *ngIf="type.value == reminderTypes[1]"
+                ngbTooltip="Select the service you will need to have on your vehicle"
+                container="body"
+                placement="top"
+                formControlName="service">
+                <option [ngValue]="null">Type of Service</option>
+                <option *ngFor="let type of typeOfServices" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label"><i class="fa fa-clock"></i></label>
+            <div class="col-sm-11">
+              <select class="form-control"  ngbTooltip="Pick the number of times this action would be repeated"
+              container="body"
+              placement="top">
+                <option *ngFor="let type of repeatTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1"></label>
+            <label class="col-sm-5">
+              <select class="form-control" formControlName="typeOfRememberInput"  ngbTooltip="Select the trigger that will notify you when this action needs to happen"
+              container="body"
+              placement="top">
+                <option [value]="typeOfRemember" *ngFor="let typeOfRemember of typeOfRemembers">Remember by {{ typeOfRemember }}</option>
+              </select>
+            </label>
+            <div class="col-sm-6">
+              <button [disabled]="form.controls['items'].length >= 2" type="button" class="btn btn-warning" (click)="addItem()"><i class="fa fa-plus"></i></button>   
+            </div>
+          </div>
+          <div formArrayName="items" *ngFor="let item of form.controls['items'].controls; let i = index">
+            <div class="form-group row" [formGroupName]="i" >
+                <label class="col-sm-1"></label>
+                <div class="col-sm-1 ">
+                  <button type="button" class="btn btn-default" (click)="removeItem(i)"><i class="fa fa-trash"></i></button>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    <input class="form-control" formControlName="rememberOf" value="rememberOf" /> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group" *ngIf="form.controls['items'].controls[i].controls.rememberOf.value === typeOfRemembers[0]">
+                    <input formControlName="mileage" type="text" class="form-control" placeholder="Odometere (km)">
+                  </div>
+                  <div class="input-group" *ngIf="form.controls['items'].controls[i].controls.rememberOf.value === typeOfRemembers[1]">
+                    <input formControlName="date" type="date" class="form-control">
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1"></label>
+            <div class="col-sm-11">
+              <textarea class="form-control" rows="5" placeholder="Note"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+              <div class="btn-group">
+                <button type="submit" class="btn btn-success" [disabled]="form.invalid">Save</button>
+                <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
