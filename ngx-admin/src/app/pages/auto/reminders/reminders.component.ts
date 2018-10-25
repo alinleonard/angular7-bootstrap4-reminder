@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
 import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-toaster';
+import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
+import { state, trigger, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'ngx-reminders',
   templateUrl: './reminders.component.html',
-  styleUrls: ['./reminders.component.scss']
+  styleUrls: ['./reminders.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      state('in', style({opacity: 1})),
+      transition(':enter', [
+        style({opacity: 0}),
+        animate(300)
+      ]),
+      transition(':leave', animate(300, style({opacity: 0})))
+    ])
+  ]
 })
 export class AutoRemindersComponent implements OnInit {
 
@@ -15,12 +27,17 @@ export class AutoRemindersComponent implements OnInit {
   typeOfExpenses = ['Car Wash'];
   typeOfServices = ['Air Filter'];
   typeOfRemembers = ['Km', 'Date'];
-  repeatTypes = ['Just one time', 'Repeat each'];
+  repeatTypes = [
+    {value: 'single', text: 'Just one time'},
+    {value: 'multiple', text: 'Repeat each'}
+  ];
 
-  constructor(private fb: FormBuilder, private toasterService: ToasterService) {
+  constructor(private fb: FormBuilder, private toasterService: ToasterService, tooltipConfig: NgbTooltipConfig) {
+    tooltipConfig.container = 'body';
+    tooltipConfig.placement = 'top';
+
     this.form = fb.group({
-      type: new FormControl(this.reminderTypes[0]),
-      typeOfRememberInput: new FormControl(this.typeOfRemembers[0]),
+      type: null,
       expense: null,
       service: null,
       repeat: null,
@@ -36,6 +53,10 @@ export class AutoRemindersComponent implements OnInit {
     return this.form.get('type') as FormControl;
   }
 
+  get isTypeExpense() {
+    return (this.type.value === this.reminderTypes[0]) ? true : false;
+  }
+
   reset(): void {
     this.form.reset();
   }
@@ -44,25 +65,24 @@ export class AutoRemindersComponent implements OnInit {
     // console.log(this.form.value);
   }
 
-
   /**
    * Methods with interest on the remember by select option
    */
 
   createItem(): FormGroup {
     return this.fb.group({
-      rememberOf: new FormControl({value: 'Km', disabled: true}, Validators.required),
+      trigger: new FormControl({value: 'Km', disabled: true}, Validators.required),
       mileage: '',
       date: ''
     });
   }
 
-  addItem(): void {
+  addItem(triggerType: string): void {
     const control = <FormArray>this.form.controls.items;
     const formItem = this.createItem();
     // set the rememberOf value
-    if (!control.controls.find(item => item.get('rememberOf').value === this.form.get('typeOfRememberInput').value)) {
-      formItem.controls.rememberOf.setValue(this.form.get('typeOfRememberInput').value);
+    if (!control.controls.find(item => item.get('trigger').value === triggerType)) {
+      formItem.controls.trigger.setValue(triggerType);
     } else {
       return;
     }
@@ -129,5 +149,4 @@ export class AutoRemindersComponent implements OnInit {
   clearToasts() {
     this.toasterService.clear();
   }
-
 }
