@@ -15,6 +15,7 @@ import { AutoRemindersComponent } from './reminders/reminders.component';
 import { FilterRememberOfTypePipe } from './filters/filter-remember-of-type.pipe';
 
 import { ToasterModule } from 'angular2-toaster';
+import { AutoServicesComponent } from './services/services.component';
 
 const componets = [
   AutoComponent,
@@ -22,7 +23,8 @@ const componets = [
   AutoDashboardComponent,
   HistoryTreeComponent,
   HistoryItemComponent,
-  AutoRemindersComponent
+  AutoRemindersComponent,
+  AutoServicesComponent
 ];
 
 @NgModule({

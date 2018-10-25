@@ -28,6 +28,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Reminder',
         link: '/pages/auto/reminders'
+      },
+      {
+        title: 'Service',
+        link: '/pages/auto/services'
       }
     ]
   },

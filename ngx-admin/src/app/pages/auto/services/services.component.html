@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-sm-12">
+    <nb-card>
+      <nb-card-header>Service</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (ngSubmit)="send()">
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">
+              <i class="fa fa-car"></i>
+            </label>
+            <div class="col-sm-11">
+              <input formControlName="date" type="date" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">
+              <i class="fa fa-car"></i>
+            </label>
+            <div class="col-sm-11">
+              <input formControlName="odometer" type="text" class="form-control" placeholder="Odometer (km)">
+              <small class="form-text">Last odometer: {{odometer}} km</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-1 col-form-label">
+              <i class="fa fa-wrench"></i>
+            </label>
+            <div class="col-sm-1">
+              <button type="button" class="btn btn-warning" (click)="addItem()">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+            <div class="col-sm-10 col-form-label">
+              <p>Type of service</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">
+              <i class="fa fa-map"></i>
+            </label>
+            <div class="col-sm-11">
+              <select class="form-control">
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-1 col-form-label">
+              <i class="fa fa-align-left"></i>
+            </label>
+            <div class="col-sm-11">
+             <textarea formControlName="note" class="form-control" rows="5" placeholder="Note"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-12">
+              <div class="btn-group">
+                <button type="submit" class="btn btn-success" [disabled]="this.form.invalid">Save</button>
+                <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
