@@ -25,8 +25,16 @@
             <label for="" class="col-sm-1 col-form-label">
               <i class="fa fa-wrench"></i>
             </label>
+            <div class="col-sm-11" *ngIf="form.controls['items'].length > 0">
+              <div formArrayName="items" *ngFor="let item of form.controls['items'].controls; let i = index">
+                <div [formGroupName]="i">
+                  {{form.controls['items'].controls[i].controls.type.value}}
+                  {{form.controls['items'].controls[i].controls.value.value}}
+                </div>
+              </div>
+            </div>
             <div class="col-sm-1">
-              <button type="button" class="btn btn-warning" (click)="addItem()">
+              <button type="button" class="btn btn-warning" (click)="showModal()">
                 <i class="fa fa-plus"></i>
               </button>
             </div>

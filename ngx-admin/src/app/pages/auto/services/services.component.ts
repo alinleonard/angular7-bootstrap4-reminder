@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { interval } from 'rxjs/observable/interval';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AutoModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'ngx-services',
@@ -13,7 +15,7 @@ export class AutoServicesComponent implements OnInit {
 
   public odometer: number;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private ms: NgbModal) {
     this.form = fb.group({
       date: null,
       odometer: null,
@@ -48,6 +50,17 @@ export class AutoServicesComponent implements OnInit {
     return this.fb.group({
       type: null,
       value: null
+    })
+  }
+
+  showModal() {
+    const activeModal = this.ms.open(AutoModalComponent, {
+      size: 'sm',
+      container: 'nb-layout'
+    });
+    activeModal.componentInstance.modalHeader = 'Type of Service';
+    activeModal.componentInstance.submitEvent.subscribe(($e) => {
+      // console.log($e.value);
     })
   }
 
