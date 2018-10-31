@@ -17,6 +17,7 @@ import { FilterRememberOfTypePipe } from './filters/filter-remember-of-type.pipe
 import { ToasterModule } from 'angular2-toaster';
 import { AutoServicesComponent } from './services/services.component';
 import { AutoModalComponent } from './services/modal/modal.component';
+import { AutoLocationModalComponent } from './services/modal/location-modal.component';
 
 const componets = [
   AutoComponent,
@@ -26,7 +27,8 @@ const componets = [
   HistoryItemComponent,
   AutoRemindersComponent,
   AutoServicesComponent,
-  AutoModalComponent
+  AutoModalComponent,
+  AutoLocationModalComponent
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const componets = [
     FilterRememberOfTypePipe
   ],
   entryComponents: [
-    AutoModalComponent
+    AutoModalComponent,
+    AutoLocationModalComponent
   ]
 })
 

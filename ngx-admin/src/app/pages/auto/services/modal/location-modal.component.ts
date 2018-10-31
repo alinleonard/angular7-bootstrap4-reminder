@@ -14,17 +14,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     </div>
     <div class="modal-body">
         <div class="form-group">
-          <select formControlName="type" class="form-control" [class.form-control-warning]="type.invalid">
-            <option [ngValue]="null">Select</option>
-            <option *ngFor="let service of services" [value]="service">{{ service }}</option>
-          </select>
+          <input formControlName="name" class="form-control" type="text" placeholder="Name" [class.form-control-warning]="name.invalid">
         </div>
         <div class="form-group">
-          <input formControlName="value"
-            class="form-control"
-            type="number"
-            placeholder="Value"
-            [class.form-control-warning]="value.invalid">
+          <input formControlName="value" class="form-control" type="text" placeholder="Value" [class.form-control-warning]="value.invalid">
         </div>
     </div>
     <div class="modal-footer">
@@ -33,24 +26,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   </form>
   `
 })
-export class AutoModalComponent {
+export class AutoLocationModalComponent {
 
   modalForm: FormGroup;
   modalHeader: string;
 
-  services = ['Air Conditioning', 'Air Filter', 'Battery', 'Belts', 'Brake Fluid', 'Brake Pad'];
+  // services = ["Air Conditioning", "Air Filter", "Battery", "Belts", "Brake Fluid", "Brake Pad"];
 
   @Output() submitEvent = new EventEmitter<FormGroup>();
 
   constructor(fb: FormBuilder, private activeModal: NgbActiveModal) {
     this.modalForm = fb.group({
-      type: [null, Validators.required],
-      value: [null, [Validators.required, Validators.min(1), Validators.max(10000)]]
+      name: [null, Validators.required],
+      value: [null, [Validators.required]]
     });
   }
 
-  get type() {
-    return this.modalForm.get('type');
+  get name() {
+    return this.modalForm.get('name');
   }
 
   get value() {
