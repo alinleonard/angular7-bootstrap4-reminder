@@ -17,7 +17,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
           <input formControlName="name" class="form-control" type="text" placeholder="Name" [class.form-control-warning]="name.invalid">
         </div>
         <div class="form-group">
-          <input formControlName="value" class="form-control" type="text" placeholder="Value" [class.form-control-warning]="value.invalid">
+          <input formControlName="address"
+            class="form-control"
+            type="text"
+            placeholder="Address"
+            [class.form-control-warning]="address.invalid">
         </div>
     </div>
     <div class="modal-footer">
@@ -38,7 +42,7 @@ export class AutoLocationModalComponent {
   constructor(fb: FormBuilder, private activeModal: NgbActiveModal) {
     this.modalForm = fb.group({
       name: [null, Validators.required],
-      value: [null, [Validators.required]]
+      address: [null, [Validators.required]]
     });
   }
 
@@ -46,8 +50,8 @@ export class AutoLocationModalComponent {
     return this.modalForm.get('name');
   }
 
-  get value() {
-    return this.modalForm.get('value');
+  get address() {
+    return this.modalForm.get('address');
   }
 
   closeModal() {

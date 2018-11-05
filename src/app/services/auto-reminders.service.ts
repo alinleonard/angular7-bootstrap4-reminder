@@ -21,7 +21,7 @@ const httpOptions = {
 })
 
 export class AutoService {
-  apiUrl = 'assets/vehicles.json';
+  apiUrl = 'assets';
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
@@ -37,8 +37,16 @@ export class AutoService {
     return throwError('Something bad happend; please try again later');
   }
 
+  getExpenses() {
+    return this.http.get(`${this.apiUrl}/expenses.json`)
+  }
+
+  getServices() {
+    return this.http.get(`${this.apiUrl}/services.json`)
+  }
+
   getVehicles() {
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/vehicles.json`);
   }
 
   postVehicle(vehicle: Vehicle): Observable<Vehicle> {

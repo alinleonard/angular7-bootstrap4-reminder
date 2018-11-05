@@ -26,6 +26,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-plus',
     children: [
       {
+        title: 'Actions',
+        link: '/pages/auto/actions'
+      },
+      {
         title: 'Reminder',
         link: '/pages/auto/reminders'
       },

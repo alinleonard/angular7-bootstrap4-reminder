@@ -6,6 +6,7 @@ import { VehicleAddComponent } from './vehicle-add/vehicle-add.component';
 import { AutoDashboardComponent } from './dashboard/dashboard.component';
 import { AutoRemindersComponent } from './reminders/reminders.component';
 import { AutoServicesComponent } from './services/services.component';
+import { AutoActionsComponent } from './actions/actions.component';
 
 
 const routes: Routes = [{
@@ -15,6 +16,10 @@ const routes: Routes = [{
     {
       path: '',
       component: AutoDashboardComponent
+    },
+    {
+      path: 'actions',
+      component: AutoActionsComponent
     },
     {
       path: 'vehicles-add',

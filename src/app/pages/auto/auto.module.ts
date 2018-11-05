@@ -18,6 +18,8 @@ import { ToasterModule } from 'angular2-toaster';
 import { AutoServicesComponent } from './services/services.component';
 import { AutoModalComponent } from './services/modal/modal.component';
 import { AutoLocationModalComponent } from './services/modal/location-modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AutoActionsComponent } from './actions/actions.component';
 
 const componets = [
   AutoComponent,
@@ -28,7 +30,8 @@ const componets = [
   AutoRemindersComponent,
   AutoServicesComponent,
   AutoModalComponent,
-  AutoLocationModalComponent
+  AutoLocationModalComponent,
+  AutoActionsComponent
 ];
 
 @NgModule({
@@ -36,6 +39,7 @@ const componets = [
     ReactiveFormsModule,
     ThemeModule,
     AutoRoutingModule,
+    HttpClientModule,
     ToasterModule.forRoot()
   ],
   providers: [HistoryService],

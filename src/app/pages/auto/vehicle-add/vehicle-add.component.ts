@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { AutoService, Vehicle } from '../../../services/auto.service';
+import { AutoService, Vehicle } from '../../../services/auto-reminders.service';
 
 @Component({
   selector: 'ngx-vehicle-add',

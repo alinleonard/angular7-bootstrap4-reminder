@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AutoService } from './auto.service';
+import { AutoService } from './auto-reminders.service';
 
 describe('AutoService', () => {
   beforeEach(() => {

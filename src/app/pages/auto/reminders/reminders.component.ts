@@ -4,6 +4,14 @@ import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { state, trigger, style, transition, animate } from '@angular/animations';
 
+enum ReminderTypes {
+  Expense = 'Expense', Service = 'Service'
+};
+
+enum RememberTypes {
+  Km = 'Km', Date = 'Date'
+}
+
 @Component({
   selector: 'ngx-reminders',
   templateUrl: './reminders.component.html',
@@ -19,25 +27,25 @@ import { state, trigger, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
+
 export class AutoRemindersComponent implements OnInit {
 
   public form: FormGroup;
 
-  reminderTypes = ['Expense', 'Service'];
-  typeOfExpenses = ['Car Wash'];
-  typeOfServices = ['Air Filter'];
-  typeOfRemembers = ['Km', 'Date'];
   repeatTypes = [
     {value: 'single', text: 'Just one time'},
     {value: 'multiple', text: 'Repeat each'}
   ];
+
+  reminderTypes = ReminderTypes;
+  rememberTypes = RememberTypes;
 
   constructor(private fb: FormBuilder, private toasterService: ToasterService, tooltipConfig: NgbTooltipConfig) {
     tooltipConfig.container = 'body';
     tooltipConfig.placement = 'top';
 
     this.form = fb.group({
-      type: null,
+      type: ReminderTypes.Expense,
       expense: null,
       service: null,
       repeat: null,
@@ -54,7 +62,7 @@ export class AutoRemindersComponent implements OnInit {
   }
 
   get isTypeExpense() {
-    return (this.type.value === this.reminderTypes[0]) ? true : false;
+    return (this.type.value === ReminderTypes.Expense.toString()) ? true : false;
   }
 
   reset(): void {

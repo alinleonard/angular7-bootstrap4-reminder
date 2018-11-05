@@ -1,0 +1,12 @@
+[
+    {
+        "_id": "1",
+        "name": "Autokarma",
+        "address": "Address location"
+    },
+    {
+        "_id": "2",
+        "name": "Name 1",
+        "address": "Address 1"
+    }
+]

@@ -4,6 +4,7 @@ import { interval } from 'rxjs/observable/interval';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AutoModalComponent } from './modal/modal.component';
 import { AutoLocationModalComponent } from './modal/location-modal.component';
+import { AutoServicesService } from '../../../services/auto-services.service';
 
 @Component({
   selector: 'ngx-services',
@@ -19,7 +20,9 @@ export class AutoServicesComponent implements OnInit {
   public currency: string = 'Ron';
   public total: number = null;
 
-  constructor(private fb: FormBuilder, private ms: NgbModal) {
+  public locations: Location;
+
+  constructor(private fb: FormBuilder, private ms: NgbModal, private serviceService: AutoServicesService) {
     this.form = fb.group({
       date: null,
       odometer: null,
@@ -34,6 +37,10 @@ export class AutoServicesComponent implements OnInit {
     count.forEach(() => {
       this.odometer += Math.floor(Math.random() * 1000);
     })
+
+    this.serviceService.getLocations().subscribe((data: Location) => {
+        this.locations = data;
+    })
   }
 
   send() {
@@ -43,6 +50,16 @@ export class AutoServicesComponent implements OnInit {
   reset() {
     this.form.reset();
   }
+
+  showLocationModal() {
+    const activeModal = this.ms.open(AutoLocationModalComponent, {
+      size: 'sm',
+      container: 'nb-layout'
+    });
+    activeModal.componentInstance.modalHeader = 'Location of Service';
+  }
+
+  /* Type of service functionality */
 
   addItem(formItem: FormGroup) {
     const control = <FormArray>this.form.controls.items;
@@ -57,25 +74,16 @@ export class AutoServicesComponent implements OnInit {
     control.removeAt(formIndex);
   }
 
-  showModal() {
+  showTypeOfServiceModal() {
     const activeModal = this.ms.open(AutoModalComponent, {
       size: 'sm',
       container: 'nb-layout'
     });
     activeModal.componentInstance.modalHeader = 'Type of Service';
     activeModal.componentInstance.submitEvent.subscribe(($e) => {
-      // console.log($e.value);
       this.addItem($e);
       this.total += parseFloat($e.value.value);
     })
-  }
-
-  createLocation() {
-    const activeModal = this.ms.open(AutoLocationModalComponent, {
-      size: 'sm',
-      container: 'nb-layout'
-    });
-    activeModal.componentInstance.modalHeader = 'Location of Service';
   }
 
 }
