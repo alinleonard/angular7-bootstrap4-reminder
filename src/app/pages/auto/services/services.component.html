@@ -4,10 +4,19 @@
     <form [formGroup]="form" (ngSubmit)="send()">
       <div class="form-group row">
         <label class="col-sm-1 col-form-label">
-          <i class="fa fa-car"></i>
+          <i class="fa fa-calendar-alt"></i>
         </label>
         <div class="col-sm-11">
-          <input formControlName="date" type="date" class="form-control">
+          <div class="input-group">
+            <ng-template #tooltipDate>Select the date the service did or will happen</ng-template>
+            <input formControlName="date" class="form-control" [ngbTooltip]="tooltipDate"
+              placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                <i class="fa fa-calendar-alt"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="form-group row">
