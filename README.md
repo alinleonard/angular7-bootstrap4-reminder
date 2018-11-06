@@ -10,7 +10,7 @@ separate but in the same place.
 ## What's included
 
 * Angular 6 with TypeScript
-* Bootstrap 4 
+* Bootstrap 4 & ng-bootstrap
 * Nebular
 * SCSS
 
@@ -23,3 +23,9 @@ separate but in the same place.
 1. Run `ng serve --open` to build and open the app.
 
 Simply clone the project or download and extract the .zip to get started. 
+
+## Docs
+
+* https://angular.io/docs
+* https://ng-bootstrap.github.io/#/components/dropdown/api
+* https://github.com/akveo/ngx-admin/

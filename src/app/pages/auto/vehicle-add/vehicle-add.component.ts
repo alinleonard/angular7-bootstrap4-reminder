@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { AutoService, Vehicle } from '../../../services/auto-reminders.service';
+import { AutoRemindersService, Vehicle } from '../../../services/auto-reminders.service';
 
 @Component({
   selector: 'ngx-vehicle-add',
@@ -14,7 +14,7 @@ export class VehicleAddComponent implements OnInit {
   types = ['Car', 'Motocycle', 'Truck', 'Boat'];
   manufacturers = ['Audi', 'BMW', 'VW', 'Opel'];
 
-  constructor(fb: FormBuilder, private _autoService: AutoService) {
+  constructor(fb: FormBuilder, private _autoService: AutoRemindersService) {
     this.form = fb.group({
       type: null,
       name: null,

@@ -21,11 +21,11 @@
       <div class="col-sm-11" [ngSwitch]="type.value">
         <ng-template #tooltipExpense>Select the expense that you will need to have on your vehicle</ng-template>
         <select *ngSwitchCase="reminderTypes.Expense" class="form-control" formControlName="expense" [ngbTooltip]="tooltipExpense">
-          <option *ngFor="let type of typeOfExpenses" [value]="type">{{ type }}</option>
+          <option *ngFor="let type of typeOfExpenses" [value]="type.value">{{ type.value }}</option>
         </select>
         <ng-template #tooltipService>Select the service you will need to have on your vehicle</ng-template>
         <select *ngSwitchCase="reminderTypes.Service" class="form-control" formControlName="service" [ngbTooltip]="tooltipService">
-          <option *ngFor="let type of typeOfServices" [value]="type">{{ type }}</option>
+          <option *ngFor="let type of typeOfServices" [value]="type.value">{{ type.value }}</option>
         </select>
       </div>
     </div>
@@ -33,31 +33,48 @@
       <label class="col-sm-1 col-form-label"><i class="fa fa-bell"></i></label>
       <div class="col-sm-11">
         <ng-template #tooltipRepeat>Pick the number of times this action would be repeated</ng-template>
-        <select class="form-control" formControlName="repeat" [ngbTooltip]="tooltipRepeat" required>
+        <!-- <select class="form-control" formControlName="repeat" [ngbTooltip]="tooltipRepeat" required>
           <option *ngFor="let type of repeatTypes" [value]="type.value">{{ type.text }}</option>
-        </select>
+        </select> -->
+        <div ngbRadioGroup class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+          <label ngbButtonLabel class="btn btn-outline-primary">
+            <input ngbButton type="radio" value="one"> One time
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary">
+            <input ngbButton type="radio" value="multiple"> Multiple times
+          </label>
+        </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-1"></label>
-      <label class="col-sm-8">
+      <label class="col-sm-11">
         <ng-template #tooltipTriggerType>Select the trigger that will notify you when this action needs to happen</ng-template>
-        <select #triggerType class="form-control" [ngbTooltip]="tooltipTriggerType">
+        <!-- <select #triggerType class="form-control" [ngbTooltip]="tooltipTriggerType">
           <option [value]="rememberTypes.Km">Remember by {{ rememberTypes.Km }}</option>
           <option [value]="rememberTypes.Date">Remember by {{ rememberTypes.Date }}</option>
-        </select>
+        </select> -->
+        <div class="dropdown" ngbDropdown autoClose="true">
+          <button class="btn btn-primary" type="button" ngbDropdownToggle>
+            Dropdown
+          </button>
+          <ul class="dropdown-menu" ngbDropdownMenu>
+            <li class="dropdown-item" (click)="addItem(rememberTypes.Km)">Remember by Km</li>
+            <li class="dropdown-item" (click)="addItem(rememberTypes.Date)">Remember by Date</li>
+          </ul>
+        </div>
       </label>
-      <div class="col-sm-3">
+      <!-- <div class="col-sm-3">
         <button [disabled]="form.controls['items'].length >= 2" type="button" class="btn btn-warning" (click)="addItem(triggerType.value)"><i class="fa fa-plus"></i></button>   
-      </div>
+      </div> -->
     </div>
     <div [@fadeAnimation]="'in'" formArrayName="items" *ngFor="let item of form.controls['items'].controls; let i = index">
       <div class="form-group row" [formGroupName]="i" >
           <label class="col-sm-1"></label>
-          <div class="col-sm-1 ">
+          <div class="col-sm-2">
             <button type="button" class="btn btn-default" (click)="removeItem(i)"><i class="fa fa-trash"></i></button>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="input-group">
               <input class="form-control" formControlName="trigger"/> 
             </div>

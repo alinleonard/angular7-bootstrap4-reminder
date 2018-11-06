@@ -9,6 +9,16 @@ export interface Vehicle {
   name: string;
 };
 
+export interface TypeOfExpenses {
+  _id: string;
+  value: string;
+}
+
+export interface TypeOfServices {
+  _id: string;
+  value: string;
+}
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -20,7 +30,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class AutoService {
+export class AutoRemindersService {
   apiUrl = 'assets';
   constructor(private http: HttpClient) { }
 

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AutoService } from './auto-reminders.service';
+import { AutoRemindersService } from './auto-reminders.service';
 
-describe('AutoService', () => {
+describe('AutoRemindersService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AutoService]
+      providers: [AutoRemindersService]
     });
   });
 
-  it('should be created', inject([AutoService], (service: AutoService) => {
+  it('should be created', inject([AutoRemindersService], (service: AutoRemindersService) => {
     expect(service).toBeTruthy();
   }));
 });

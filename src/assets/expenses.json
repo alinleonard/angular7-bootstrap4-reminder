@@ -1,6 +1,10 @@
 [
     {
-        "_Id": "0",
+        "_id": "0",
         "value": "Car Wash"
+    }, 
+    {
+        "_id": "1",
+        "value": "Other"
     }
 ]

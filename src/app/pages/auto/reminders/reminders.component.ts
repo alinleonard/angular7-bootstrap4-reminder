@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@ang
 import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-toaster';
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { state, trigger, style, transition, animate } from '@angular/animations';
+import { AutoRemindersService } from '../../../services/auto-reminders.service';
 
 enum ReminderTypes {
   Expense = 'Expense', Service = 'Service'
@@ -32,15 +33,16 @@ export class AutoRemindersComponent implements OnInit {
 
   public form: FormGroup;
 
-  repeatTypes = [
-    {value: 'single', text: 'Just one time'},
-    {value: 'multiple', text: 'Repeat each'}
-  ];
-
   reminderTypes = ReminderTypes;
   rememberTypes = RememberTypes;
+  typeOfExpenses: any;
+  typeOfServices: any;
 
-  constructor(private fb: FormBuilder, private toasterService: ToasterService, tooltipConfig: NgbTooltipConfig) {
+  constructor(
+      private fb: FormBuilder,
+      private toasterService: ToasterService,
+      tooltipConfig: NgbTooltipConfig,
+      private autoRemindersService: AutoRemindersService) {
     tooltipConfig.container = 'body';
     tooltipConfig.placement = 'top';
 
@@ -52,9 +54,22 @@ export class AutoRemindersComponent implements OnInit {
       items: this.fb.array([]),
       note: null
     });
+
+    this.getTypeOfExpenses();
+    this.getTypeOfServices();
   }
 
   ngOnInit() {
+  }
+
+  getTypeOfExpenses(): void {
+    this.autoRemindersService.getExpenses()
+      .subscribe(expenses => this.typeOfExpenses = expenses);
+  }
+
+  getTypeOfServices(): void {
+    this.autoRemindersService.getServices()
+      .subscribe(services => this.typeOfServices = services);
   }
 
   get type() {
