@@ -19,7 +19,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Vehicle',
     icon: 'ion-android-car',
-    link: '/pages/auto/vehicles-add'
+    link: '/pages/auto/vehicles'
   },
   {
     title: 'Actions',
@@ -28,14 +28,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Actions',
         link: '/pages/auto/actions'
-      },
-      {
-        title: 'Reminder',
-        link: '/pages/auto/reminders'
-      },
-      {
-        title: 'Service',
-        link: '/pages/auto/services'
       }
     ]
   },

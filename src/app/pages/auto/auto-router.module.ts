@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AutoComponent } from './auto.component';
-import { VehicleAddComponent } from './vehicle-add/vehicle-add.component';
+
 import { AutoDashboardComponent } from './dashboard/dashboard.component';
-import { AutoRemindersComponent } from './reminders/reminders.component';
-import { AutoServicesComponent } from './services/services.component';
 import { AutoActionsComponent } from './actions/actions.component';
+import { AutoVehiclesComponent } from './vehicles/vehicles.component';
 
 
 const routes: Routes = [{
@@ -22,16 +21,8 @@ const routes: Routes = [{
       component: AutoActionsComponent
     },
     {
-      path: 'vehicles-add',
-      component: VehicleAddComponent
-    },
-    {
-      path: 'reminders',
-      component: AutoRemindersComponent
-    },
-    {
-      path: 'services',
-      component: AutoServicesComponent
+      path: 'vehicles',
+      component: AutoVehiclesComponent
     }
   ]
 }]

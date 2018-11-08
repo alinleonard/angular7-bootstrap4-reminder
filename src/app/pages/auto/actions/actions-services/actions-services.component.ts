@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { interval } from 'rxjs/observable/interval';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AutoModalComponent } from './modal/modal.component';
-import { AutoLocationModalComponent } from './modal/location-modal.component';
-import { AutoServicesService } from '../../../services/auto-services.service';
+import { AutoActionsServiceModalComponent } from './modal/modal.component';
+import { AutoActionsServiceLocationModalComponent } from './modal/location-modal.component';
+import { AutoServicesService } from '../../../../services/auto-services.service';
 
 @Component({
-  selector: 'ngx-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+  selector: 'ngx-auto-actions-services',
+  templateUrl: './actions-services.component.html',
+  styleUrls: ['./actions-services.component.scss']
 })
-export class AutoServicesComponent implements OnInit {
+export class AutoActionsServicesComponent implements OnInit {
 
   public form: FormGroup;
 
@@ -52,7 +52,7 @@ export class AutoServicesComponent implements OnInit {
   }
 
   showLocationModal() {
-    const activeModal = this.ms.open(AutoLocationModalComponent, {
+    const activeModal = this.ms.open(AutoActionsServiceLocationModalComponent, {
       size: 'sm',
       container: 'nb-layout'
     });
@@ -75,7 +75,7 @@ export class AutoServicesComponent implements OnInit {
   }
 
   showTypeOfServiceModal() {
-    const activeModal = this.ms.open(AutoModalComponent, {
+    const activeModal = this.ms.open(AutoActionsServiceModalComponent, {
       size: 'sm',
       container: 'nb-layout'
     });

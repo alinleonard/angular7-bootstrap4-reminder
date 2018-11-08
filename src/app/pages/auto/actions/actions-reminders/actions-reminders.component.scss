@@ -1,4 +1,4 @@
-@import '../../../@theme/styles/themes.scss';
+@import '../../../../@theme/styles/themes.scss';
 @import '~bootstrap/scss/mixins/breakpoints';
 
 @include nb-install-component() {
@@ -7,5 +7,8 @@
     }
     .full-name-inputs {
         display: flex;
+    }
+    .col-form-label {
+       text-align: center;
     }
 }
