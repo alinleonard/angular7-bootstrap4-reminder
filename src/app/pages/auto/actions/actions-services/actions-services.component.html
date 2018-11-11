@@ -33,7 +33,7 @@
           <i class="fa fa-wrench"></i>
         </label>
         <div class="col-sm-11">
-          <div formArrayName="items" *ngFor="let item of form.controls['items'].controls; let i = index">
+          <div formArrayName="items" *ngFor="let item of form.controls['items']['controls']; let i = index">
             <div [formGroupName]="i">
               <div class="row">
                 <div class="col-sm-4">
