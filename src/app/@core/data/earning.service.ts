@@ -25,16 +25,16 @@ export class EarningService {
   private pieChartData = [
     {
       value: 50,
-      name: 'Bitcoin',
+      name: 'Bitcoin'
     },
     {
       value: 25,
-      name: 'Tether',
+      name: 'Tether'
     },
     {
       value: 25,
-      name: 'Ethereum',
-    },
+      name: 'Ethereum'
+    }
   ];
 
   private liveUpdateChartData = {
@@ -42,26 +42,26 @@ export class EarningService {
       liveChart: [],
       delta: {
         up: true,
-        value: 4,
+        value: 4
       },
-      dailyIncome: 45895,
+      dailyIncome: 45895
     },
     tether: {
       liveChart: [],
       delta: {
         up: false,
-        value: 9,
+        value: 9
       },
-      dailyIncome: 5862,
+      dailyIncome: 5862
     },
     ethereum: {
       liveChart: [],
       delta: {
         up: false,
-        value: 21,
+        value: 21
       },
-      dailyIncome: 584,
-    },
+      dailyIncome: 584
+    }
   };
 
   getDefaultLiveChartData(elementsNumber: number) {
@@ -85,10 +85,10 @@ export class EarningService {
         [
           this.currentDate.getFullYear(),
           this.currentDate.getMonth(),
-          this.currentDate.getDate(),
+          this.currentDate.getDate()
         ].join('/'),
-        Math.round(this.currentValue),
-      ],
+        Math.round(this.currentValue)
+      ]
     };
   }
 

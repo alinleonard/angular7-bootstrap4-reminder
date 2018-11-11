@@ -27,7 +27,7 @@ export class TrafficListService {
     this.data = {
       week: this.getDataWeek(),
       month: this.getDataMonth(),
-      year: this.getDataYear(),
+      year: this.getDataYear()
     };
   }
 
@@ -80,14 +80,14 @@ export class TrafficListService {
         value: this.getRandom(1000),
         delta: {
           up: deltaValue <= 0,
-          value: Math.abs(deltaValue),
+          value: Math.abs(deltaValue)
         },
         comparison: {
           prevDate,
           prevValue,
           nextDate: timePeriod,
-          nextValue,
-        },
+          nextValue
+        }
       };
 
       return [...result, item];

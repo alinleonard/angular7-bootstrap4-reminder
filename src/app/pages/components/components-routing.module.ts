@@ -11,22 +11,22 @@ const routes: Routes = [{
   children: [
   {
     path: 'tree',
-    component: TreeComponent,
+    component: TreeComponent
   }, {
     path: 'notifications',
-    component: NotificationsComponent,
-  },
-  ],
+    component: NotificationsComponent
+  }
+  ]
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ComponentsRoutingModule { }
 
 export const routedComponents = [
   ComponentsComponent,
   TreeComponent,
-  NotificationsComponent,
+  NotificationsComponent
 ];

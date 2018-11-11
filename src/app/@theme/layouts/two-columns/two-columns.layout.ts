@@ -33,7 +33,7 @@ import { takeWhile } from 'rxjs/operators/takeWhile';
       </nb-layout-footer>
 
     </nb-layout>
-  `,
+  `
 })
 export class TwoColumnsLayoutComponent implements OnDestroy {
 

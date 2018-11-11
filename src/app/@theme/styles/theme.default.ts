@@ -9,14 +9,14 @@ export const DEFAULT_THEME = {
       '#42db7d',
       '#42db7d',
       '#42db7d',
-      '#42db7d',
+      '#42db7d'
     ],
 
     solar: {
       gradientLeft: '#42db7d',
       gradientRight: '#42db7d',
       shadowColor: 'rgba(0, 0, 0, 0)',
-      radius: ['80%', '90%'],
+      radius: ['80%', '90%']
     },
 
     traffic: {
@@ -35,7 +35,7 @@ export const DEFAULT_THEME = {
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
       gradFrom: '#ebeef2',
-      gradTo: '#ebeef2',
+      gradTo: '#ebeef2'
     },
 
     electricity: {
@@ -60,14 +60,14 @@ export const DEFAULT_THEME = {
 
       areaGradFrom: 'rgba(235, 238, 242, 0.5)',
       areaGradTo: 'rgba(235, 238, 242, 0.5)',
-      shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
+      shadowLineDarkBg: 'rgba(0, 0, 0, 0)'
     },
 
     bubbleMap: {
       titleColor: '#484848',
       areaColor: '#dddddd',
       areaHoverColor: '#cccccc',
-      areaBorderColor: '#ebeef2',
+      areaBorderColor: '#ebeef2'
     },
 
     profitBarAnimationEchart: {
@@ -86,7 +86,7 @@ export const DEFAULT_THEME = {
       tooltipBg: '#ffffff',
       tooltipBorderColor: '#c0c8d1',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;'
     },
 
     trafficBarEchart: {
@@ -102,7 +102,7 @@ export const DEFAULT_THEME = {
       tooltipBorderColor: '#c0c8d1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipFontWeight: 'bolder'
     },
 
     countryOrders: {
@@ -123,7 +123,7 @@ export const DEFAULT_THEME = {
 
       chartLineBottomShadowColor: '#eceff4',
 
-      chartInnerLineColor: '#eceff4',
+      chartInnerLineColor: '#eceff4'
     },
 
     echarts: {
@@ -133,12 +133,12 @@ export const DEFAULT_THEME = {
       splitLineColor: '#ebeef2',
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
       tooltipBackgroundColor: '#6a7985',
-      areaOpacity: '0.7',
+      areaOpacity: '0.7'
     },
 
     chartjs: {
       axisLineColor: '#cccccc',
-      textColor: '#484848',
+      textColor: '#484848'
     },
 
     orders: {
@@ -179,7 +179,7 @@ export const DEFAULT_THEME = {
 
       thirdAreaGradFrom: 'rgba(31 ,106, 124, 0.2)',
       thirdAreaGradTo: 'rgba(4, 126, 230, 0)',
-      thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
+      thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)'
     },
 
     // TODO: need design for default theme
@@ -206,13 +206,13 @@ export const DEFAULT_THEME = {
       // third bar
       thirdLineGradFrom: 'rgba(236, 242, 245, 0.8)',
       thirdLineGradTo: 'rgba(236, 242, 245, 0.8)',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineShadow: 'rgba(14, 16, 48, 0.4)'
     },
 
     orderProfitLegend: {
       firstItem: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
       secondItem: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
-      thirdItem: 'rgba(236, 242, 245, 0.8)',
+      thirdItem: 'rgba(236, 242, 245, 0.8)'
     },
 
     visitors: {
@@ -245,12 +245,12 @@ export const DEFAULT_THEME = {
       innerLineWidth: '1',
 
       innerAreaGradFrom: 'rgba(60, 221, 156, 1)',
-      innerAreaGradTo: 'rgba(60, 221, 156, 1)',
+      innerAreaGradTo: 'rgba(60, 221, 156, 1)'
     },
 
     visitorsLegend: {
       firstIcon: 'linear-gradient(90deg, #3edd81 0%, #3bddad 100%)',
-      secondIcon: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)',
+      secondIcon: 'linear-gradient(90deg, #8d7fff 0%, #b17fff 100%)'
     },
 
     visitorsPie: {
@@ -264,12 +264,12 @@ export const DEFAULT_THEME = {
       secondPieShadowColor: 'rgba(0, 0, 0, 0)',
       secondPieRadius: ['60%', '97%'],
       shadowOffsetX: '0',
-      shadowOffsetY: '0',
+      shadowOffsetY: '0'
     },
 
     visitorsPieLegend: {
       firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
-      secondSection: '#8defbb',
+      secondSection: '#8defbb'
     },
 
     earningPie: {
@@ -288,7 +288,7 @@ export const DEFAULT_THEME = {
 
       thirdPieGradientLeft: '#ffca00',
       thirdPieGradientRight: '#ffca00',
-      thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+      thirdPieShadowColor: 'rgba(0, 0, 0, 0)'
     },
 
     earningLine: {
@@ -301,7 +301,7 @@ export const DEFAULT_THEME = {
       tooltipBg: '#ffffff',
       tooltipBorderColor: '#c0c8d1',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-    },
-  },
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;'
+    }
+  }
 };

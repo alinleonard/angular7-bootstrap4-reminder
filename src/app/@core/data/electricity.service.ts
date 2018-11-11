@@ -18,8 +18,8 @@ export class ElectricityService {
         { month: 'Sept', delta: '2.61', down: true, kWatts: '792', cost: '92' },
         { month: 'Oct', delta: '0.16', down: true, kWatts: '791', cost: '92' },
         { month: 'Nov', delta: '1.71', down: true, kWatts: '786', cost: '89' },
-        { month: 'Dec', delta: '0.37', down: false, kWatts: '789', cost: '91' },
-      ],
+        { month: 'Dec', delta: '0.37', down: false, kWatts: '789', cost: '91' }
+      ]
     },
     {
       title: '2016',
@@ -36,8 +36,8 @@ export class ElectricityService {
         { month: 'Sept', delta: '1.03', down: true, kWatts: '752', cost: '74' },
         { month: 'Oct', delta: '2.94', down: false, kWatts: '769', cost: '82' },
         { month: 'Nov', delta: '0.26', down: true, kWatts: '767', cost: '81' },
-        { month: 'Dec', delta: '1.62', down: true, kWatts: '760', cost: '76' },
-      ],
+        { month: 'Dec', delta: '1.62', down: true, kWatts: '760', cost: '76' }
+      ]
     },
     {
       title: '2017',
@@ -53,9 +53,9 @@ export class ElectricityService {
         { month: 'Sept', delta: '0.55', down: false, kWatts: '787', cost: '90' },
         { month: 'Oct', delta: '1.81', down: true, kWatts: '779', cost: '86' },
         { month: 'Nov', delta: '1.12', down: true, kWatts: '774', cost: '84' },
-        { month: 'Dec', delta: '0.52', down: false, kWatts: '776', cost: '95' },
-      ],
-    },
+        { month: 'Dec', delta: '0.52', down: false, kWatts: '776', cost: '95' }
+      ]
+    }
   ];
 
   constructor() {

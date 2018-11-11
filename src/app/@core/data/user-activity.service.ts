@@ -20,7 +20,7 @@ export class UserActivityService {
     this.data = {
       week: this.getDataWeek(),
       month: this.getDataMonth(),
-      year: this.getDataYear(),
+      year: this.getDataYear()
     };
   }
 
@@ -30,7 +30,7 @@ export class UserActivityService {
         date: week,
         pagesVisitCount: this.getRandom(1000),
         deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
+        newVisits: this.getRandom(100)
       };
     });
   }
@@ -45,7 +45,7 @@ export class UserActivityService {
         date: `${index + 1} ${month}`,
         pagesVisitCount: this.getRandom(1000),
         deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
+        newVisits: this.getRandom(100)
       };
     });
   }
@@ -56,7 +56,7 @@ export class UserActivityService {
         date: year,
         pagesVisitCount: this.getRandom(1000),
         deltaUp: this.getRandom(1) % 2 === 0,
-        newVisits: this.getRandom(100),
+        newVisits: this.getRandom(100)
       };
     });
   }

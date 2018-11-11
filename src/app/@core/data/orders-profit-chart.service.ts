@@ -14,20 +14,20 @@ export class OrdersProfitChartService {
   private summary = [
     {
       title: 'Marketplace',
-      value: 3654,
+      value: 3654
     },
     {
       title: 'Last Month',
-      value: 946,
+      value: 946
     },
     {
       title: 'Last Week',
-      value: 654,
+      value: 654
     },
     {
       title: 'Today',
-      value: 230,
-    },
+      value: 230
+    }
   ];
 
   constructor(private ordersChartService: OrdersChartService,

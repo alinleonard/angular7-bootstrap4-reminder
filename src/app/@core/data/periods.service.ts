@@ -6,7 +6,7 @@ export class PeriodsService {
     return [
       '2010', '2011', '2012',
       '2013', '2014', '2015',
-      '2016', '2017', '2018',
+      '2016', '2017', '2018'
     ];
   }
 
@@ -15,7 +15,7 @@ export class PeriodsService {
       'Jan', 'Feb', 'Mar',
       'Apr', 'May', 'Jun',
       'Jul', 'Aug', 'Sep',
-      'Oct', 'Nov', 'Dec',
+      'Oct', 'Nov', 'Dec'
     ];
   }
 
@@ -27,7 +27,7 @@ export class PeriodsService {
       'Thu',
       'Fri',
       'Sat',
-      'Sun',
+      'Sun'
     ];
   }
 }

@@ -8,14 +8,14 @@ export const COSMIC_THEME = {
       '#31ffad',
       '#7bff24',
       '#fff024',
-      '#f7bd59',
+      '#f7bd59'
     ],
 
     solar: {
       gradientLeft: '#7bff24',
       gradientRight: '#2ec7fe',
       shadowColor: '#19977E',
-      radius: ['70%', '90%'],
+      radius: ['70%', '90%']
     },
 
     traffic: {
@@ -34,7 +34,7 @@ export const COSMIC_THEME = {
       shadowLineDarkBg: '#655ABD',
       shadowLineShadow: 'rgba(33, 7, 77, 0.5)',
       gradFrom: 'rgba(118, 89, 255, 0.4)',
-      gradTo: 'rgba(164, 84, 255, 0.5)',
+      gradTo: 'rgba(164, 84, 255, 0.5)'
     },
 
     electricity: {
@@ -59,14 +59,14 @@ export const COSMIC_THEME = {
 
       areaGradFrom: 'rgba(188, 92, 255, 0.5)',
       areaGradTo: 'rgba(188, 92, 255, 0)',
-      shadowLineDarkBg: '#a695ff',
+      shadowLineDarkBg: '#a695ff'
     },
 
     bubbleMap: {
       titleColor: '#ffffff',
       areaColor: '#2c2961',
       areaHoverColor: '#a1a1e5',
-      areaBorderColor: '#654ddb',
+      areaBorderColor: '#654ddb'
     },
 
     profitBarAnimationEchart: {
@@ -85,7 +85,7 @@ export const COSMIC_THEME = {
       tooltipBg: 'rgba(0, 255, 170, 0.35)',
       tooltipBorderColor: '#00d977',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;'
     },
 
     trafficBarEchart: {
@@ -101,7 +101,7 @@ export const COSMIC_THEME = {
       tooltipBorderColor: '#00d977',
       tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
       tooltipTextColor: '#ffffff',
-      tooltipFontWeight: 'normal',
+      tooltipFontWeight: 'normal'
     },
 
     countryOrders: {
@@ -122,7 +122,7 @@ export const COSMIC_THEME = {
 
       chartLineBottomShadowColor: '#00977e',
 
-      chartInnerLineColor: '#2f296b',
+      chartInnerLineColor: '#2f296b'
     },
 
     echarts: {
@@ -132,12 +132,12 @@ export const COSMIC_THEME = {
       splitLineColor: '#342e73',
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
       tooltipBackgroundColor: '#6a7985',
-      areaOpacity: '1',
+      areaOpacity: '1'
     },
 
     chartjs: {
       axisLineColor: '#a1a1e5',
-      textColor: '#ffffff',
+      textColor: '#ffffff'
     },
 
     orders: {
@@ -178,7 +178,7 @@ export const COSMIC_THEME = {
 
       thirdAreaGradFrom: 'rgba(118, 73, 208, 0.7)',
       thirdAreaGradTo: 'rgba(188, 92, 255, 0.4)',
-      thirdShadowLineDarkBg: '#a695ff',
+      thirdShadowLineDarkBg: '#a695ff'
     },
 
     profit: {
@@ -204,13 +204,13 @@ export const COSMIC_THEME = {
       // third bar
       thirdLineGradFrom: '#4e40a4',
       thirdLineGradTo: '#4e40a4',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineShadow: 'rgba(14, 16, 48, 0.4)'
     },
 
     orderProfitLegend: {
       firstItem: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)',
       secondItem: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)',
-      thirdItem: '#4e40a4',
+      thirdItem: '#4e40a4'
     },
 
     visitors: {
@@ -242,12 +242,12 @@ export const COSMIC_THEME = {
       innerLineWidth: '1',
 
       innerAreaGradFrom: 'rgba(59, 165, 243, 1)',
-      innerAreaGradTo: 'rgba(4, 133, 243 , 1)',
+      innerAreaGradTo: 'rgba(4, 133, 243 , 1)'
     },
 
     visitorsLegend: {
       firstIcon: 'linear-gradient(90deg, #0088ff 0%, #3dafff 100%)',
-      secondIcon: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)',
+      secondIcon: 'linear-gradient(90deg, #a454ff 0%, #7659ff 100%)'
     },
 
     visitorsPie: {
@@ -261,12 +261,12 @@ export const COSMIC_THEME = {
       secondPieShadowColor: '#cf7c1c',
       secondPieRadius: ['60%', '95%'],
       shadowOffsetX: '0',
-      shadowOffsetY: '3',
+      shadowOffsetY: '3'
     },
 
     visitorsPieLegend: {
       firstSection: 'linear-gradient(90deg, #ffcb17 0%, #ff874c 100%)',
-      secondSection: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)',
+      secondSection: 'linear-gradient(90deg, #00c7c7 0%, #00d977 100%)'
     },
 
     earningPie: {
@@ -285,7 +285,7 @@ export const COSMIC_THEME = {
 
       thirdPieGradientLeft: '#ffca00',
       thirdPieGradientRight: '#ffca00',
-      thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+      thirdPieShadowColor: 'rgba(0, 0, 0, 0)'
     },
 
     earningLine: {
@@ -298,7 +298,7 @@ export const COSMIC_THEME = {
       tooltipBg: 'rgba(0, 255, 170, 0.35)',
       tooltipBorderColor: '#00d977',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;',
-    },
-  },
+      tooltipExtraCss: 'box-shadow: 0px 2px 46px 0 rgba(0, 255, 170, 0.35); border-radius: 10px; padding: 4px 16px;'
+    }
+  }
 };

@@ -12,18 +12,18 @@ export class StateService implements OnDestroy {
       name: 'One Column',
       icon: 'nb-layout-default',
       id: 'one-column',
-      selected: true,
+      selected: true
     },
     {
       name: 'Two Column',
       icon: 'nb-layout-two-column',
-      id: 'two-column',
+      id: 'two-column'
     },
     {
       name: 'Center Column',
       icon: 'nb-layout-centre',
-      id: 'center-column',
-    },
+      id: 'center-column'
+    }
   ];
 
   protected sidebars: any = [
@@ -31,13 +31,13 @@ export class StateService implements OnDestroy {
       name: 'Sidebar at layout start',
       icon: 'nb-layout-sidebar-left',
       id: 'start',
-      selected: true,
+      selected: true
     },
     {
       name: 'Sidebar at layout end',
       icon: 'nb-layout-sidebar-right',
-      id: 'end',
-    },
+      id: 'end'
+    }
   ];
 
   protected layoutState$ = new BehaviorSubject(this.layouts[0]);

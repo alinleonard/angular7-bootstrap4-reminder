@@ -6,7 +6,7 @@ import 'style-loader!angular2-toaster/toaster.css';
 @Component({
   selector: 'ngx-notifications',
   styleUrls: ['./notifications.component.scss'],
-  templateUrl: './notifications.component.html',
+  templateUrl: './notifications.component.html'
 })
 export class NotificationsComponent {
   constructor(private toasterService: ToasterService) {}
@@ -35,7 +35,7 @@ export class NotificationsComponent {
     { title: null, body: 'We rock at <i>Angular</i>' },
     { title: null, body: 'Titles are not always needed' },
     { title: null, body: 'Toastr rock!' },
-    { title: 'What about nice html?', body: '<b>Sure you <em>can!</em></b>' },
+    { title: 'What about nice html?', body: '<b>Sure you <em>can!</em></b>' }
   ];
 
   makeToast() {
@@ -59,7 +59,7 @@ export class NotificationsComponent {
       tapToDismiss: this.isHideOnClick,
       preventDuplicates: this.isDuplicatesPrevented,
       animation: this.animationType,
-      limit: this.toastsLimit,
+      limit: this.toastsLimit
     });
     const toast: Toast = {
       type: type,
@@ -67,7 +67,7 @@ export class NotificationsComponent {
       body: body,
       timeout: this.timeout,
       showCloseButton: this.isCloseButton,
-      bodyOutputType: BodyOutputType.TrustedHtml,
+      bodyOutputType: BodyOutputType.TrustedHtml
     };
     this.toasterService.popAsync(toast);
   }

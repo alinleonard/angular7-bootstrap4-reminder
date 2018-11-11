@@ -11,10 +11,10 @@ import { ComponentsRoutingModule, routedComponents } from './components-routing.
     ThemeModule,
     ComponentsRoutingModule,
     TreeModule,
-    ToasterModule.forRoot(),
+    ToasterModule.forRoot()
   ],
   declarations: [
-    ...routedComponents,
-  ],
+    ...routedComponents
+  ]
 })
 export class ComponentsModule { }

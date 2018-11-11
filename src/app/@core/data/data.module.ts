@@ -32,24 +32,24 @@ const SERVICES = [
   OrdersProfitChartService,
   TrafficBarService,
   ProfitBarAnimationChartService,
-  LayoutService,
+  LayoutService
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   providers: [
-    ...SERVICES,
-  ],
+    ...SERVICES
+  ]
 })
 export class DataModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: DataModule,
       providers: [
-        ...SERVICES,
-      ],
+        ...SERVICES
+      ]
     };
   }
 }

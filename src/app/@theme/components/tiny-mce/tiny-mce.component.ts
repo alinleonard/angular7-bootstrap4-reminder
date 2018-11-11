@@ -2,7 +2,7 @@ import { Component, OnDestroy, AfterViewInit, Output, EventEmitter, ElementRef }
 
 @Component({
   selector: 'ngx-tiny-mce',
-  template: '',
+  template: ''
 })
 export class TinyMCEComponent implements OnDestroy, AfterViewInit {
 
@@ -23,7 +23,7 @@ export class TinyMCEComponent implements OnDestroy, AfterViewInit {
           this.editorKeyup.emit(editor.getContent());
         });
       },
-      height: '320',
+      height: '320'
     });
   }
 

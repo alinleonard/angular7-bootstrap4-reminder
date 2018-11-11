@@ -9,7 +9,7 @@ export class ProfitBarAnimationChartService {
   constructor() {
     this.data = {
       firstLine: this.getDataForFirstLine(),
-      secondLine: this.getDataForSecondLine(),
+      secondLine: this.getDataForSecondLine()
     };
   }
 

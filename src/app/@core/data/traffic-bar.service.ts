@@ -17,7 +17,7 @@ export class TrafficBarService {
     this.data = {
       week: this.getDataForWeekPeriod(),
       month: this.getDataForMonthPeriod(),
-      year: this.getDataForYearPeriod(),
+      year: this.getDataForYearPeriod()
     };
   }
 
@@ -25,7 +25,7 @@ export class TrafficBarService {
     return {
       data: [10, 15, 19, 7, 20, 13, 15],
       labels: this.period.getWeeks(),
-      formatter: '{c0} MB',
+      formatter: '{c0} MB'
     };
   }
 
@@ -33,7 +33,7 @@ export class TrafficBarService {
     return {
       data: [0.5, 0.3, 0.8, 0.2, 0.3, 0.7, 0.8, 1, 0.7, 0.8, 0.6, 0.7],
       labels: this.period.getMonths(),
-      formatter: '{c0} GB',
+      formatter: '{c0} GB'
     };
   }
 
@@ -41,7 +41,7 @@ export class TrafficBarService {
     return {
       data: [10, 15, 19, 7, 20, 13, 15, 19, 11],
       labels: this.period.getYears(),
-      formatter: '{c0} GB',
+      formatter: '{c0} GB'
     };
   }
 

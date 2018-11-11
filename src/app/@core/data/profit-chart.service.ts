@@ -16,7 +16,7 @@ export class ProfitChartService {
     '2015',
     '2016',
     '2017',
-    '2018',
+    '2018'
   ];
 
   private data = { };
@@ -25,7 +25,7 @@ export class ProfitChartService {
     this.data = {
       week: this.getDataForWeekPeriod(),
       month: this.getDataForMonthPeriod(),
-      year: this.getDataForYearPeriod(),
+      year: this.getDataForYearPeriod()
     };
   }
 
@@ -37,8 +37,8 @@ export class ProfitChartService {
       data: [
         this.getRandomData(nPoint),
         this.getRandomData(nPoint),
-        this.getRandomData(nPoint),
-      ],
+        this.getRandomData(nPoint)
+      ]
     };
   }
 
@@ -50,8 +50,8 @@ export class ProfitChartService {
       data: [
         this.getRandomData(nPoint),
         this.getRandomData(nPoint),
-        this.getRandomData(nPoint),
-      ],
+        this.getRandomData(nPoint)
+      ]
     };
   }
 
@@ -63,8 +63,8 @@ export class ProfitChartService {
       data: [
         this.getRandomData(nPoint),
         this.getRandomData(nPoint),
-        this.getRandomData(nPoint),
-      ],
+        this.getRandomData(nPoint)
+      ]
     };
   }
 

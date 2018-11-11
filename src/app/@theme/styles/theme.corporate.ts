@@ -7,14 +7,14 @@ export const CORPORATE_THEME = {
       '#ffa36b',
       '#ff9e7a',
       '#ff9888',
-      '#ff8ea0',
+      '#ff8ea0'
     ],
 
     solar: {
       gradientLeft: '#ff8ea0',
       gradientRight: '#ffa36b',
       shadowColor: 'rgba(0, 0, 0, 0)',
-      radius: ['80%', '90%'],
+      radius: ['80%', '90%']
     },
 
     traffic: {
@@ -33,7 +33,7 @@ export const CORPORATE_THEME = {
       shadowLineDarkBg: 'rgba(0, 0, 0, 0)',
       shadowLineShadow: 'rgba(0, 0, 0, 0)',
       gradFrom: '#ffffff',
-      gradTo: '#ffffff',
+      gradTo: '#ffffff'
     },
 
     electricity: {
@@ -58,14 +58,14 @@ export const CORPORATE_THEME = {
 
       areaGradFrom: 'rgba(255, 255, 255, 0)',
       areaGradTo: 'rgba(255, 255, 255, 0)',
-      shadowLineDarkBg: 'rgba(255, 255, 255, 0)',
+      shadowLineDarkBg: 'rgba(255, 255, 255, 0)'
     },
 
     bubbleMap: {
       titleColor: '#484848',
       areaColor: '#dddddd',
       areaHoverColor: '#cccccc',
-      areaBorderColor: '#ebeef2',
+      areaBorderColor: '#ebeef2'
     },
 
     profitBarAnimationEchart: {
@@ -84,7 +84,7 @@ export const CORPORATE_THEME = {
       tooltipBg: '#eef2f5',
       tooltipBorderColor: '#eef2f5',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;'
     },
 
     trafficBarEchart: {
@@ -100,7 +100,7 @@ export const CORPORATE_THEME = {
       tooltipBorderColor: '#ebeef2',
       tooltipExtraCss: 'border-radius: 10px; padding: 8px 24px;',
       tooltipTextColor: '#2a2a2a',
-      tooltipFontWeight: 'bolder',
+      tooltipFontWeight: 'bolder'
     },
 
     countryOrders: {
@@ -121,7 +121,7 @@ export const CORPORATE_THEME = {
 
       chartLineBottomShadowColor: 'rgba(113, 158, 252, 1)',
 
-      chartInnerLineColor: '#eceff4',
+      chartInnerLineColor: '#eceff4'
     },
 
     echarts: {
@@ -131,12 +131,12 @@ export const CORPORATE_THEME = {
       splitLineColor: '#ebeef2',
       itemHoverShadowColor: 'rgba(0, 0, 0, 0.5)',
       tooltipBackgroundColor: '#6a7985',
-      areaOpacity: '0.7',
+      areaOpacity: '0.7'
     },
 
     chartjs: {
       axisLineColor: '#cccccc',
-      textColor: '#484848',
+      textColor: '#484848'
     },
 
     orders: {
@@ -177,7 +177,7 @@ export const CORPORATE_THEME = {
 
       thirdAreaGradFrom: 'rgba(0, 0, 0, 0)',
       thirdAreaGradTo: 'rgba(0, 0, 0, 0)',
-      thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)',
+      thirdShadowLineDarkBg: 'rgba(0, 0, 0, 0)'
     },
 
     profit: {
@@ -203,13 +203,13 @@ export const CORPORATE_THEME = {
       // third bar
       thirdLineGradFrom: '#e3ecfe',
       thirdLineGradTo: '#e3ecfe',
-      thirdLineShadow: 'rgba(14, 16, 48, 0.4)',
+      thirdLineShadow: 'rgba(14, 16, 48, 0.4)'
     },
 
     orderProfitLegend: {
       firstItem: '#719efc',
       secondItem: '#5dcfe3',
-      thirdItem: '#e3ecfe',
+      thirdItem: '#e3ecfe'
     },
 
     visitors: {
@@ -242,12 +242,12 @@ export const CORPORATE_THEME = {
       innerLineWidth: '1',
 
       innerAreaGradFrom: 'rgba(227, 236, 254, 1)',
-      innerAreaGradTo: 'rgba(227, 236, 254, 1)',
+      innerAreaGradTo: 'rgba(227, 236, 254, 1)'
     },
 
     visitorsLegend: {
       firstIcon: '#e3ecfe',
-      secondIcon: '#719efc',
+      secondIcon: '#719efc'
     },
 
     visitorsPie: {
@@ -261,12 +261,12 @@ export const CORPORATE_THEME = {
       secondPieShadowColor: '#b2cafb',
       secondPieRadius: ['63%', '92%'],
       shadowOffsetX: '-4',
-      shadowOffsetY: '-4',
+      shadowOffsetY: '-4'
     },
 
     visitorsPieLegend: {
       firstSection: '#719efc',
-      secondSection: '#99e5ee',
+      secondSection: '#99e5ee'
     },
 
     earningPie: {
@@ -285,7 +285,7 @@ export const CORPORATE_THEME = {
 
       thirdPieGradientLeft: '#ff5e83',
       thirdPieGradientRight: '#ff5e83',
-      thirdPieShadowColor: 'rgba(0, 0, 0, 0)',
+      thirdPieShadowColor: 'rgba(0, 0, 0, 0)'
     },
 
     earningLine: {
@@ -298,7 +298,7 @@ export const CORPORATE_THEME = {
       tooltipBg: '#eef2f5',
       tooltipBorderColor: '#eef2f5',
       tooltipBorderWidth: '3',
-      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
-    },
-  },
+      tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;'
+    }
+  }
 };

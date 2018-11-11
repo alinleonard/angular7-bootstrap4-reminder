@@ -4,7 +4,7 @@ import { NbThemeService } from '@nebular/theme';
 @Component({
   selector: 'ngx-temperature',
   styleUrls: ['./temperature.component.scss'],
-  templateUrl: './temperature.component.html',
+  templateUrl: './temperature.component.html'
 })
 export class TemperatureComponent implements OnDestroy {
 
