@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
+import { TemperatureDraggerComponent } from './temperature/temperature-dragger/temperature-dragger.component'
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { DashboardComponent } from './dashboard.component';
     ThemeModule
   ],
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    TemperatureDraggerComponent
   ]
 })
 export class DashboardModule { }

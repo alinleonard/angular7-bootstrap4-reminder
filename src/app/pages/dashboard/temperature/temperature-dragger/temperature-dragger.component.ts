@@ -1,5 +1,5 @@
 import {
-  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges
+  Component, HostListener, ViewChild, ElementRef, Input, Output, EventEmitter, AfterViewInit, OnChanges,
 } from '@angular/core';
 
 const VIEW_BOX_SIZE = 300;
@@ -7,7 +7,7 @@ const VIEW_BOX_SIZE = 300;
 @Component({
   selector: 'ngx-temperature-dragger',
   templateUrl: './temperature-dragger.component.html',
-  styleUrls: ['./temperature-dragger.component.scss']
+  styleUrls: ['./temperature-dragger.component.scss'],
 })
 export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
 
@@ -69,7 +69,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     gradArcs: [],
     nonSelectedArc: {},
     thumbPosition: { x: 0, y: 0 },
-    blurRadius: 15
+    blurRadius: 15,
   };
 
   private isMouseDown = false;
@@ -125,7 +125,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     // TODO: review set data to styles object
     setTimeout(() => {
       this.invalidateGradientArcs();
-    })
+    });
   }
 
   private calculateVars() {
@@ -180,27 +180,27 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
       outer: {
         start: {
           x: xStartMultiplier * this.radius,
-          y: yMultiplier * this.radius
+          y: yMultiplier * this.radius,
         },
         end: {
           x: xEndMultiplier * this.radius,
-          y: yMultiplier * this.radius
+          y: yMultiplier * this.radius,
         },
-        radius: this.radius
+        radius: this.radius,
       },
       inner: {
         start: {
           x: xStartMultiplier * innerRadius + this.thickness,
-          y: yMultiplier * innerRadius + this.thickness
+          y: yMultiplier * innerRadius + this.thickness,
         },
         end: {
           x: xEndMultiplier * innerRadius + this.thickness,
-          y: yMultiplier * innerRadius + this.thickness
+          y: yMultiplier * innerRadius + this.thickness,
         },
-        radius: innerRadius
+        radius: innerRadius,
       },
       thickness: this.thickness,
-      big: this.bottomAngleRad < Math.PI ? '1' : '0'
+      big: this.bottomAngleRad < Math.PI ? '1' : '0',
     };
 
   }
@@ -254,7 +254,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
       gradArray.push({
         start: { x: calcX(currentAngle), y: calcY(currentAngle) },
         end: { x: calcX(currentAngle + angleStep), y: calcY(currentAngle + angleStep) },
-        big: Math.PI <= angleStep ? 1 : 0
+        big: Math.PI <= angleStep ? 1 : 0,
       });
     }
     return gradArray;
@@ -281,7 +281,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
       const arcValue = getArc(si);
       this.styles.gradArcs.push({
         color: this.colors[i],
-        d: arcValue
+        d: arcValue,
       });
     }
 
@@ -297,7 +297,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
        A ${2 * this.radius},${2 * this.radius}
        1 ${angle > Math.PI ? '1' : '0'} 0
        ${this.radius + this.radius * 2 * Math.sin(angle)},${this.radius + this.radius * 2 * Math.cos(angle)}
-       Z`
+       Z`,
     };
   }
 
@@ -307,7 +307,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
     const actualAngle = (2 * Math.PI - this.bottomAngleRad) * this.getValuePercentage() + this.bottomAngleRad / 2;
     this.styles.thumbPosition = {
       x: curveRadius * (1 - Math.sin(actualAngle)) + radiusOffset,
-      y: curveRadius * (1 + Math.cos(actualAngle)) + radiusOffset
+      y: curveRadius * (1 + Math.cos(actualAngle)) + radiusOffset,
     };
     this.invalidateNonSelectedArc();
   }
@@ -317,7 +317,7 @@ export class TemperatureDraggerComponent implements AfterViewInit, OnChanges {
       const rect = this.svgRoot.nativeElement.getBoundingClientRect();
       const center = {
         x: rect.left + VIEW_BOX_SIZE * this.scaleFactor / 2,
-        y: rect.top + (this.translateYValue + this.radius) * this.scaleFactor
+        y: rect.top + (this.translateYValue + this.radius) * this.scaleFactor,
       };
       let actualAngle = Math.atan2(center.x - event.clientX, event.clientY - center.y);
       if (actualAngle < 0) {

@@ -15,7 +15,7 @@ import { takeWhile } from 'rxjs/operators/takeWhile';
       [vertical]="vertical"
     >
     </ngx-switcher>
-  `
+  `,
 })
 export class LayoutDirectionSwitcherComponent implements OnDestroy {
   directions = NbLayoutDirection;

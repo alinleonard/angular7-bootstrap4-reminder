@@ -12,18 +12,18 @@ const socialLinks = [
   {
     url: 'https://github.com/akveo/nebular',
     target: '_blank',
-    icon: 'socicon-github'
+    icon: 'socicon-github',
   },
   {
     url: 'https://www.facebook.com/akveo/',
     target: '_blank',
-    icon: 'socicon-facebook'
+    icon: 'socicon-facebook',
   },
   {
     url: 'https://twitter.com/akveo_inc',
     target: '_blank',
-    icon: 'socicon-twitter'
-  }
+    icon: 'socicon-twitter',
+  },
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -40,47 +40,47 @@ export const NB_CORE_PROVIDERS = [
     strategies: [
       NbDummyAuthStrategy.setup({
         name: 'email',
-        delay: 3000
-      })
+        delay: 3000,
+      }),
     ],
     forms: {
       login: {
-        socialLinks: socialLinks
+        socialLinks: socialLinks,
       },
       register: {
-        socialLinks: socialLinks
-      }
-    }
+        socialLinks: socialLinks,
+      },
+    },
   }).providers,
 
   NbSecurityModule.forRoot({
     accessControl: {
       guest: {
-        view: '*'
+        view: '*',
       },
       user: {
         parent: 'guest',
         create: '*',
         edit: '*',
-        remove: '*'
-      }
-    }
+        remove: '*',
+      },
+    },
   }).providers,
 
   {
-    provide: NbRoleProvider, useClass: NbSimpleRoleProvider
+    provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
-  AnalyticsService
+  AnalyticsService,
 ];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
-    NbAuthModule
+    NbAuthModule,
   ],
-  declarations: []
+  declarations: [],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -91,8 +91,8 @@ export class CoreModule {
     return <ModuleWithProviders>{
       ngModule: CoreModule,
       providers: [
-        ...NB_CORE_PROVIDERS
-      ]
+        ...NB_CORE_PROVIDERS,
+      ],
     };
   }
 }

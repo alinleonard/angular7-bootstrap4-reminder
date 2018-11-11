@@ -16,7 +16,8 @@ import {
   NbUserModule,
   NbCheckboxModule,
   NbPopoverModule,
-  NbContextMenuModule
+  NbContextMenuModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -29,14 +30,21 @@ import {
   SwitcherComponent,
   LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
-  ThemeSwitcherListComponent
+  TinyMCEComponent,
+  ThemeSwitcherListComponent,
 } from './components';
-import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
+import {
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+} from './pipes';
 import {
   OneColumnLayoutComponent,
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent
+  TwoColumnsLayoutComponent,
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -58,7 +66,8 @@ const NB_MODULES = [
   NbPopoverModule,
   NbContextMenuModule,
   NgbModule,
-  NbSecurityModule // *nbIsGranted directive
+  NbSecurityModule, // *nbIsGranted directive,
+  NbProgressBarModule,
 ];
 
 const COMPONENTS = [
@@ -70,45 +79,47 @@ const COMPONENTS = [
   FooterComponent,
   SearchInputComponent,
   ThemeSettingsComponent,
+  TinyMCEComponent,
   OneColumnLayoutComponent,
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent
+  TwoColumnsLayoutComponent,
 ];
 
 const ENTRY_COMPONENTS = [
-  ThemeSwitcherListComponent
+  ThemeSwitcherListComponent,
 ];
 
 const PIPES = [
   CapitalizePipe,
   PluralPipe,
   RoundPipe,
-  TimingPipe
+  TimingPipe,
+  NumberWithCommasPipe,
 ];
 
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'cosmic'
+      name: 'cosmic',
     },
-    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ]
+    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
   ).providers,
   ...NbSidebarModule.forRoot().providers,
-  ...NbMenuModule.forRoot().providers
+  ...NbMenuModule.forRoot().providers,
 ];
 
 @NgModule({
   imports: [...BASE_MODULES, ...NB_MODULES],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES],
-  entryComponents: [...ENTRY_COMPONENTS]
+  entryComponents: [...ENTRY_COMPONENTS],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {
     return <ModuleWithProviders>{
       ngModule: ThemeModule,
-      providers: [...NB_THEME_PROVIDERS]
+      providers: [...NB_THEME_PROVIDERS],
     };
   }
 }

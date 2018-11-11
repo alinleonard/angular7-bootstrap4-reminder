@@ -7,7 +7,7 @@ import { ThemeSwitcherListComponent } from './themes-switcher-list/themes-switch
 @Component({
   selector: 'ngx-theme-switcher',
   templateUrl: './theme-switcher.component.html',
-  styleUrls: ['./theme-switcher.component.scss']
+  styleUrls: ['./theme-switcher.component.scss'],
 })
 export class ThemeSwitcherComponent {
   @ViewChild(NbPopoverDirective) popover: NbPopoverDirective;

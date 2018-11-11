@@ -6,7 +6,7 @@ import {
   NbMenuItem,
   NbMenuService,
   NbSidebarService,
-  NbThemeService
+  NbThemeService,
 } from '@nebular/theme';
 
 import { StateService } from '../../../@core/data/state.service';
@@ -57,50 +57,50 @@ import { StateService } from '../../../@core/data/state.service';
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
     </nb-layout>
-  `
+  `,
 })
 export class SampleLayoutComponent implements OnDestroy {
 
   subMenu: NbMenuItem[] = [
     {
       title: 'PAGE LEVEL MENU',
-      group: true
+      group: true,
     },
     {
       title: 'Buttons',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/buttons'
+      link: '/pages/ui-features/buttons',
     },
     {
       title: 'Grid',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/grid'
+      link: '/pages/ui-features/grid',
     },
     {
       title: 'Icons',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/icons'
+      link: '/pages/ui-features/icons',
     },
     {
       title: 'Modals',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/modals'
+      link: '/pages/ui-features/modals',
     },
     {
       title: 'Typography',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/typography'
+      link: '/pages/ui-features/typography',
     },
     {
       title: 'Animated Searches',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/search-fields'
+      link: '/pages/ui-features/search-fields',
     },
     {
       title: 'Tabs',
       icon: 'ion ion-android-radio-button-off',
-      link: '/pages/ui-features/tabs'
-    }
+      link: '/pages/ui-features/tabs',
+    },
   ];
   layout: any = {};
   sidebar: any = {};
@@ -129,7 +129,7 @@ export class SampleLayoutComponent implements OnDestroy {
       .pipe(
         takeWhile(() => this.alive),
         withLatestFrom(this.themeService.onMediaQueryChange()),
-        delay(20)
+        delay(20),
       )
       .subscribe(([item, [bpFrom, bpTo]]: [any, [NbMediaBreakpoint, NbMediaBreakpoint]]) => {
 

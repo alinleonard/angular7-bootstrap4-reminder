@@ -15,7 +15,7 @@ import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.option
       </li>
     </ul>
   `,
-  styleUrls: ['./theme-switcher-list.component.scss']
+  styleUrls: ['./theme-switcher-list.component.scss'],
 })
 export class ThemeSwitcherListComponent {
 
@@ -26,21 +26,21 @@ export class ThemeSwitcherListComponent {
   themes = [
     {
       title: 'Light',
-      key: 'default'
+      key: 'default',
     },
     {
       title: 'Cosmic',
-      key: 'cosmic'
+      key: 'cosmic',
     },
     {
       title: 'Corporate',
-      key: 'corporate'
-    }
+      key: 'corporate',
+    },
   ];
 
   constructor(
     private themeService: NbThemeService,
-    private analyticsService: AnalyticsService
+    private analyticsService: AnalyticsService,
   ) {}
 
   onToggleTheme(themeKey: string) {
