@@ -1,3 +1,10 @@
-<p>
-  vehicles-list works!
-</p>
+<nb-card [size]="breakpoint.width >= breakpoints.xxxl || breakpoint.width < breakpoints.md ? 'large' : 'xlarge'">
+    <nb-tabset fullWith>
+      <nb-tab tabTitle="Vehicles">
+        <div class="vehicle" *ngFor="let v of vehicles; let i = index">
+          <ngx-item [name]="v.name" [title]="v.type" [editable]="true" (onSave)="save($event)"></ngx-item>
+          <i class="i-vehicle nb-checkmark" [ngClass]="{'active': v.status}" (click)="toggleVehicleSection(i)"></i>
+        </div>
+      </nb-tab>
+    </nb-tabset> 
+</nb-card>

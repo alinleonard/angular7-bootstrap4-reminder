@@ -22,6 +22,7 @@ import { AutoActionsServiceModalComponent } from './actions/actions-services/mod
 import { AutoVehiclesAddComponent } from './vehicles/vehicles-add/vehicles-add.component';
 import { AutoVehiclesListComponent } from './vehicles/vehicles-list/vehicles-list.component';
 import { AutoActionsServiceLocationModalComponent } from './actions/actions-services/modal/location-modal.component';
+import { CtItemModule } from '../../@custom/components/item/ct-item.module';
 
 const componets = [
   AutoComponent,
@@ -44,7 +45,8 @@ const componets = [
     ThemeModule,
     AutoRoutingModule,
     HttpClientModule,
-    ToasterModule.forRoot()
+    ToasterModule.forRoot(),
+    CtItemModule
   ],
   providers: [HistoryService],
   declarations: [

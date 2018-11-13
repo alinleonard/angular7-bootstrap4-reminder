@@ -1,0 +1,18 @@
+<div class="item-container">
+
+    <div *ngIf="imageBackgroundStyle" class="item-picture image" [style.background-image]="imageBackgroundStyle">
+        <nb-badge *ngIf="badgeText" [text]="badgeText" [status]="badgeStatus" [position]="badgePosition"></nb-badge>
+    </div>
+    <div *ngIf="!imageBackgroundStyle" class="item-picture background" [style.background-color]="color">
+        <ng-container *ngIf="showInitialsValue">
+            {{ nameInitials }}
+        </ng-container>
+        <nb-badge *ngIf="badgeText" [text]="badgeText" [status]="badgeStatus" [position]="badgePosition"></nb-badge>
+    </div>
+
+    <div class="info-container">
+        <input #nameInput [hidden]="!editing" class="form-control" [(ngModel)]="name" (focus)="onFocusInput()" (focusout)="outFocusInput()"/>
+        <div *ngIf="name" class="item-name" [hidden]="editing" (click)="edit()">{{ name }}</div>
+        <div *ngIf="title" class="item-title" [hidden]="editing">{{ title }}</div>
+    </div>
+</div>
