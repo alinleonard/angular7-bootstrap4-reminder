@@ -1,0 +1,87 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes';
+
+@include nb-install-component() {
+    nb-card-body {
+        padding: 0%;
+    }
+    .history {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: nb-theme(color-fg);
+        padding: 1rem;
+
+        &:hover {
+            background: lighten(nb-theme(card-bg), 5%);
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid nb-theme(separator);
+
+            @include nb-for-theme(corporate) {
+                border-bottom-color: nb-theme(tabs-separator);
+            }
+        }
+    }
+
+    .item-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .item-picture {
+        position: relative;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: solid 2px nb-theme(user-fg-highlight);
+        background: nb-theme(user-bg);
+        width: nb-theme(user-size-large);
+        height: nb-theme(user-size-large);
+
+        &.image {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &.background {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: nb-theme(user-fg);
+        }
+
+        &.reminder {
+            background: nb-theme(user-fg);
+            color: nb-theme(user-bg);
+        }
+    }
+
+    .item-name {
+        font-family: Exo;
+        color: nb-theme(card-header-fg-heading);
+        font-weight: nb-theme(card-header-font-weight);
+        font-size: nb-theme(card-padding);
+    }
+
+    .item-location {
+        font-size: 0.875rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .item-odometer {
+        font-size: 0.875rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .info-container {
+        margin-left: 0.875rem;
+    }
+
+    .title-section {
+        width: nb-theme(user-size-large);
+        height: nb-theme(user-size-large);
+    }
+}
