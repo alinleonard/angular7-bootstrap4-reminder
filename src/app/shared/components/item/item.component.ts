@@ -3,11 +3,11 @@ import { SafeStyle } from '@angular/platform-browser';
 
 @Component({
     selector: 'ngx-item',
-    templateUrl: './ct-item.component.html',
-    styleUrls: ['./ct-item.component.scss']
+    templateUrl: './item.component.html',
+    styleUrls: ['./item.component.scss']
 })
 
-export class CtItemComponent implements OnInit {
+export class ItemComponent implements OnInit {
     /**
      * ```ts
      *  <ngx-item [name]="'Alin Busila'" [title]="'Engineer'" [editable]="true" (onSave)="fn($event)"></ngx-item>

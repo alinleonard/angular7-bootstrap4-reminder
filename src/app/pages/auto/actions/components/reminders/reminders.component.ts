@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@ang
 import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-toaster';
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { state, trigger, style, transition, animate } from '@angular/animations';
-import { AutoRemindersService } from '../../../../services/auto-reminders.service';
+import { AutoRemindersService } from '../../../../../shared/services/auto-reminders.service';
 
 enum ReminderTypes {
   Expense = 'Expense', Service = 'Service'
@@ -14,9 +14,9 @@ enum RememberTypes {
 }
 
 @Component({
-  selector: 'ngx-auto-actions-reminders',
-  templateUrl: './actions-reminders.component.html',
-  styleUrls: ['./actions-reminders.component.scss'],
+  selector: 'ngx-reminders',
+  templateUrl: './reminders.component.html',
+  styleUrls: ['./reminders.component.scss'],
   animations: [
     trigger('fadeAnimation', [
       state('in', style({opacity: 1})),
@@ -29,7 +29,7 @@ enum RememberTypes {
   ]
 })
 
-export class AutoActionsRemindersComponent implements OnInit {
+export class RemindersComponent implements OnInit {
 
   public form: FormGroup;
 

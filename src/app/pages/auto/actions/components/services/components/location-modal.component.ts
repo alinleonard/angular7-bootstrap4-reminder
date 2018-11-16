@@ -30,7 +30,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   </form>
   `
 })
-export class AutoActionsServiceLocationModalComponent {
+export class LocationModalComponent {
 
   modalForm: FormGroup;
   modalHeader: string;

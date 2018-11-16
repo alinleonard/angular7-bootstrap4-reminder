@@ -1,42 +1,21 @@
 import { NgModule } from '@angular/core';
-
 import { ThemeModule } from '../../@theme/theme.module';
-
-import { AutoRoutingModule } from './auto-router.module';
-import { AutoComponent } from './auto.component';
-import { AutoDashboardComponent } from './dashboard/dashboard.component';
-import { HistoryService } from '../components/history-tree/history.service';
-import { HistoryTreeComponent } from '../components/history-tree/history-tree.component';
-import { HistoryItemComponent } from '../components/history-item/history-item.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { FilterRememberOfTypePipe } from './filters/filter-remember-of-type.pipe';
-
 import { ToasterModule } from 'angular2-toaster';
 import { HttpClientModule } from '@angular/common/http';
-import { AutoActionsComponent } from './actions/actions.component';
-import { AutoVehiclesComponent } from './vehicles/vehicles.component';
-import { AutoActionsRemindersComponent } from './actions/actions-reminders/actions-reminders.component';
-import { AutoActionsServicesComponent } from './actions/actions-services/actions-services.component';
-import { AutoActionsServiceModalComponent } from './actions/actions-services/modal/modal.component';
-import { AutoVehiclesAddComponent } from './vehicles/vehicles-add/vehicles-add.component';
-import { AutoVehiclesListComponent } from './vehicles/vehicles-list/vehicles-list.component';
-import { AutoActionsServiceLocationModalComponent } from './actions/actions-services/modal/location-modal.component';
-import { CtItemModule } from '../../@custom/components/item/ct-item.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { AutoRoutingModule } from './auto-router.module';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { ActionsModule } from './actions/actions.module';
+
+import { AutoComponent } from './auto.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { ItemModule } from '../../shared/components/item/item.module';
 
 const componets = [
   AutoComponent,
-  AutoDashboardComponent,
-  HistoryTreeComponent,
-  HistoryItemComponent,
-  AutoActionsComponent,
-  AutoActionsRemindersComponent,
-  AutoActionsServicesComponent,
-  AutoActionsServiceModalComponent,
-  AutoVehiclesComponent,
-  AutoVehiclesAddComponent,
-  AutoVehiclesListComponent,
-  AutoActionsServiceLocationModalComponent
+  DashboardComponent,
 ];
 
 @NgModule({
@@ -46,16 +25,15 @@ const componets = [
     AutoRoutingModule,
     HttpClientModule,
     ToasterModule.forRoot(),
-    CtItemModule
+    ItemModule,
+	VehiclesModule,
+	ActionsModule
   ],
-  providers: [HistoryService],
+  providers: [],
   declarations: [
-    ...componets,
-    FilterRememberOfTypePipe
+    ...componets
   ],
   entryComponents: [
-    AutoActionsServiceModalComponent,
-    AutoActionsServiceLocationModalComponent
   ]
 })
 

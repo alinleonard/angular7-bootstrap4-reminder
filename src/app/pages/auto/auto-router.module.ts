@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AutoComponent } from './auto.component';
 
-import { AutoDashboardComponent } from './dashboard/dashboard.component';
-import { AutoActionsComponent } from './actions/actions.component';
-import { AutoVehiclesComponent } from './vehicles/vehicles.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ActionsComponent } from './actions/actions.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 
 const routes: Routes = [{
@@ -14,15 +14,15 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      component: AutoDashboardComponent
+      component: DashboardComponent
     },
     {
       path: 'actions',
-      component: AutoActionsComponent
+      component: ActionsComponent
     },
     {
       path: 'vehicles',
-      component: AutoVehiclesComponent
+      component: VehiclesComponent
     }
   ]
 }]

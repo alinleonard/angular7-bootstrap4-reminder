@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
 import { NbBadgeModule } from '@nebular/theme/components/badge/badge.module';
-import { CtItemComponent } from './ct-item.component';
+import { ItemComponent } from './item.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 const components = [
-    CtItemComponent
+    ItemComponent
 ]
 
 @NgModule({
@@ -22,4 +22,4 @@ const components = [
         ...components
     ]
 })
-export class CtItemModule { }
+export class ItemModule { }

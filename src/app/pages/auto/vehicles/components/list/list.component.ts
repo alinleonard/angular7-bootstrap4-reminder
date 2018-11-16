@@ -2,11 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-auto-vehicles-list',
-  templateUrl: './vehicles-list.component.html',
-  styleUrls: ['./vehicles-list.component.scss']
+  selector: 'ngx-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-export class AutoVehiclesListComponent implements OnInit, OnDestroy {
+export class ListComponent implements OnInit, OnDestroy {
 
   vehicles: any[];
   breakpoint: NbMediaBreakpoint;

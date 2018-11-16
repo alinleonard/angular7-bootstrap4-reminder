@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { AutoRemindersService, Vehicle } from '../../../../services/auto-reminders.service';
+import { AutoRemindersService, Vehicle } from '../../../../../shared/services/auto-reminders.service';
 
 @Component({
-  selector: 'ngx-auto-vehicles-add',
-  templateUrl: './vehicles-add.component.html',
-  styleUrls: ['./vehicles-add.component.scss']
+  selector: 'ngx-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
-export class AutoVehiclesAddComponent implements OnInit {
+export class AddComponent implements OnInit {
 
   public form: FormGroup;
 
