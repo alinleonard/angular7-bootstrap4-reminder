@@ -15,7 +15,7 @@ import { ItemModule } from '../../shared/components/item/item.module';
 
 const componets = [
   AutoComponent,
-  DashboardComponent,
+  DashboardComponent
 ];
 
 @NgModule({
@@ -26,8 +26,8 @@ const componets = [
     HttpClientModule,
     ToasterModule.forRoot(),
     ItemModule,
-	VehiclesModule,
-	ActionsModule
+    VehiclesModule,
+    ActionsModule
   ],
   providers: [],
   declarations: [
