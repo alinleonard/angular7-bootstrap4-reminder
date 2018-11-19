@@ -19,6 +19,10 @@ const routes: Routes = [{
       loadChildren: './auto/auto.module#AutoModule'
     },
     {
+      path: 'iot',
+      loadChildren: './iot/iot.module#IotModule'
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full'

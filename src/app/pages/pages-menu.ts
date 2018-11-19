@@ -8,6 +8,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true
   },
   {
+    title: 'IoT',
+    group: true
+  },
+  {
+    title: 'Home',
+    icon: 'ion-home',
+    link: '/pages/iot/'
+  },
+  {
     title: 'AUTO',
     group: true
   },
