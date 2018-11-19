@@ -12,8 +12,8 @@ import { RemindersComponent } from './components/reminders/reminders.component';
 import { ServicesComponent } from './components/services/services.component';
 
 const componets = [
-	ActionsComponent,
-	RemindersComponent,
+  ActionsComponent,
+  RemindersComponent,
   ServicesComponent,
   LocationModalComponent,
   AutoActionsServiceModalComponent
@@ -24,7 +24,7 @@ const componets = [
     ReactiveFormsModule,
     ThemeModule,
     HttpClientModule,
-    ToasterModule.forRoot(),
+    ToasterModule.forRoot()
   ],
   providers: [],
   declarations: [

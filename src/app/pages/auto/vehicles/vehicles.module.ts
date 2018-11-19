@@ -23,7 +23,7 @@ const componets = [
   ],
   providers: [],
   declarations: [
-    ...componets,
+    ...componets
   ],
   entryComponents: [
   ]
