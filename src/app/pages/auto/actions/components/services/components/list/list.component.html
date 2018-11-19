@@ -1,0 +1,23 @@
+<nb-card size="large">
+    <nb-card-header>List</nb-card-header>
+    <nb-card-body fullWith>
+        <div class="item-block" *ngFor="let r of services; let i = index">
+            <div class="item-container">
+                <div class="item-title">
+                    {{r.title}}
+                </div>
+                <div class="item-date">
+                        {{r.date}}
+                </div>
+            </div>
+            <div class="right">
+                <div class="top">
+                    20000000 km
+                </div>
+                <div class="botton">
+                    $250.000
+                </div>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

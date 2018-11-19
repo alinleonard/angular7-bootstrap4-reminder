@@ -1,0 +1,26 @@
+<nb-card size="large">
+    <nb-card-header>List</nb-card-header>
+    <nb-card-body fullWith>
+        <div class="item-block" *ngFor="let r of reminders; let i = index">
+            <div class="item-container">
+                <div class="item-front">
+                    <div class="top">
+                        <div class="text" *ngIf="r.date">31</div>
+                        <div class="icon" *ngIf="r.odometer"><i class="fa fa-tachometer-alt"></i></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="text" *ngIf="r.date">OCT</div>
+                        <div class="tachometer" *ngIf="r.odometer">{{ r.odometer }}</div>
+                    </div>
+                </div>
+                <div class="item-label">
+                    <i class="fa fa-bookmark" [ngClass]="{'red': r.type == 'expense'}"></i>
+                </div>
+                <div class="item-title">
+                    {{r.title}}
+                </div>
+            </div>
+            <i class="fa fa-edit" (click)="edit(i)"></i>
+        </div>
+    </nb-card-body>
+</nb-card>

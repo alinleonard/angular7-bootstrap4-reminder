@@ -4,19 +4,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToasterModule } from 'angular2-toaster';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AutoActionsServiceModalComponent } from './components/services/components/modal.component';
-import { LocationModalComponent } from './components/services/components/location-modal.component';
+import { AutoActionsServiceModalComponent } from './components/services/components/add/components/modal.component';
 
 import { ActionsComponent } from './actions.component';
-import { RemindersComponent } from './components/reminders/reminders.component';
-import { ServicesComponent } from './components/services/services.component';
+
+import { RemindersModule } from './components/reminders/reminders.module';
+import { ServicesModule } from './components/services/services.module';
+import { ActionsRoutingModule } from './actions-router.module';
 
 const componets = [
-  ActionsComponent,
-  RemindersComponent,
-  ServicesComponent,
-  LocationModalComponent,
-  AutoActionsServiceModalComponent
+  ActionsComponent
 ];
 
 @NgModule({
@@ -24,15 +21,17 @@ const componets = [
     ReactiveFormsModule,
     ThemeModule,
     HttpClientModule,
-    ToasterModule.forRoot()
+    ToasterModule.forRoot(),
+    RemindersModule,
+    ServicesModule,
+    ActionsRoutingModule
   ],
   providers: [],
   declarations: [
     ...componets
   ],
   entryComponents: [
-    AutoActionsServiceModalComponent,
-    LocationModalComponent
+    AutoActionsServiceModalComponent
   ]
 })
 

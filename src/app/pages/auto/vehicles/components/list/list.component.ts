@@ -40,6 +40,10 @@ export class ListComponent implements OnInit, OnDestroy {
     this.vehicles[index].status = true;
   }
 
+  showVehicleDetails(index) {
+    // console.log(index);
+  }
+
   save(event) {
     // console.log(event);
   }

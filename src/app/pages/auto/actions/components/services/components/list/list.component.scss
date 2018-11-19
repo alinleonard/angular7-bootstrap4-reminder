@@ -1,0 +1,51 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes';
+
+@include nb-install-component() {
+    nb-card-body {
+        padding: 0%;
+    }
+
+    .item-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: nb-theme(color-fg);
+        padding: 1rem;
+
+        &:hover {
+            background: lighten(nb-theme(card-bg), 5%);
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid nb-theme(separator);
+
+            @include nb-for-theme(corporate) {
+                border-bottom-color: nb-theme(tabs-separator);
+            }
+        }
+    }
+
+    .item-container {
+        position: relative;
+        align-items: center;
+        height: nb-theme(user-size-large);
+    }
+
+    .item-title {
+        font-family: Exo;
+        color: nb-theme(card-header-fg-heading);
+        font-weight: nb-theme(card-header-font-weight);
+        font-size: nb-theme(card-padding);
+    }
+
+    .right {
+        .top {
+            font-family: Exo;
+            color: nb-theme(card-header-fg-heading);
+            font-weight: nb-theme(card-header-font-weight);
+            // font-size: nb-theme(card-padding);
+        }
+    }
+
+}

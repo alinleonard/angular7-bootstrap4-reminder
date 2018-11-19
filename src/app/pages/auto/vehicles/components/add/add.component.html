@@ -6,8 +6,7 @@
         <select 
           required
           formControlName="type"
-          class="form-control" 
-          [ngClass]="type.invalid ? 'form-control-danger' : 'form-control-success'">
+          class="form-control" >
           <option [ngValue]="null" disabled>Type</option>
           <option *ngFor="let type of types" [value]="type">{{type}}</option>
         </select>
@@ -23,8 +22,7 @@
         <select 
           required
           formControlName="manufacturer" 
-          class="form-control"
-          [ngClass]="manufacturer.invalid ? 'form-control-danger' : 'form-control-success'">
+          class="form-control">
           <option [ngValue]="null" disabled>Manufacturer</option>
           <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer">{{manufacturer}}</option>
         </select>
@@ -35,8 +33,7 @@
           type="text"
           formControlName="model"
           placeholder="Model"
-          class="form-control"
-          [ngClass]="model.invalid ? 'form-control-danger' : 'form-control-success'">
+          class="form-control">
       </div>
       <div class="row full-name-inputs">
         <div class="col-sm-6 input-group">

@@ -2,28 +2,33 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Dashboard',
-    icon: 'nb-home',
+    title: 'Platform',
+    icon: 'ion-cloud',
     link: '/pages/dashboard',
     home: true
+  },
+  {
+    title: 'IoT Dashboard',
+    icon: 'nb-home',
+    link: '/pages/iot'
+  },
+  {
+    title: 'Auto',
+    icon: 'fa fa-parking',
+    link: '/pages/auto'
   },
   {
     title: 'IoT',
     group: true
   },
   {
-    title: 'Home',
-    icon: 'ion-home',
-    link: '/pages/iot/'
+    title: 'Devices',
+    icon: 'ion-cube',
+    link: '/pages/iot'
   },
   {
     title: 'AUTO',
     group: true
-  },
-  {
-    title: 'Home',
-    icon: 'ion-home',
-    link: '/pages/auto/'
   },
   {
     title: 'Vehicle',
@@ -35,8 +40,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-plus',
     children: [
       {
-        title: 'Actions',
-        link: '/pages/auto/actions'
+        title: 'Reminders',
+        link: '/pages/auto/actions/reminders'
+      },
+      {
+        title: 'Services',
+        link: '/pages/auto/actions/services'
       }
     ]
   },
