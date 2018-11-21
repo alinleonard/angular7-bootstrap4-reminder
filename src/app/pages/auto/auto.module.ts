@@ -12,10 +12,12 @@ import { AutoComponent } from './auto.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { ItemModule } from '../../shared/components/item/item.module';
+import { NotificationsComponent } from '../../shared/components/notifications/notifications.component';
 
 const componets = [
   AutoComponent,
-  DashboardComponent
+  DashboardComponent,
+  NotificationsComponent
 ];
 
 @NgModule({
