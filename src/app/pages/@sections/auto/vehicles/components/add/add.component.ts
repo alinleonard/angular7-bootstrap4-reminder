@@ -10,10 +10,10 @@ import { Vehicle, VehiclesService } from '../../../../../../shared/services/vehi
 export class AddComponent implements OnInit {
 
   public form: FormGroup;
-  
+
   types = ['Car', 'Motocycle', 'Truck', 'Boat'];
   manufacturers = ['Audi', 'BMW', 'VW', 'Opel'];
-  
+
   constructor(fb: FormBuilder, private vehicleService: VehiclesService) {
     this.form = fb.group({
       type: null,
@@ -27,10 +27,10 @@ export class AddComponent implements OnInit {
       note: null
     });
   }
-  
+
   ngOnInit() {
   }
-  
+
   get type() {
     return this.form.get('type') as FormControl;
   }
@@ -48,7 +48,7 @@ export class AddComponent implements OnInit {
   }
 
   send() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
     const vehicle: Vehicle = this.form.value as Vehicle;
     this.vehicleService.create(vehicle)
         .subscribe(() => this.reset());

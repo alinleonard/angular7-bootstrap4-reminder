@@ -15,7 +15,9 @@ export class ListComponent implements OnInit, OnDestroy {
   breakpoints: any;
   themeSubscription: any;
 
-  constructor(private themeService: NbThemeService, private breakpointService: NbMediaBreakpointsService, private vehicleService: VehiclesService) {
+  constructor(private themeService: NbThemeService,
+     private breakpointService: NbMediaBreakpointsService,
+     private vehicleService: VehiclesService) {
     this.breakpoints = this.breakpointService.getBreakpointsMap();
     this.themeSubscription = this.themeService.onMediaQueryChange()
       .subscribe(([oldValue, newValue]) => {
