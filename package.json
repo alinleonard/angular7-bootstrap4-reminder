@@ -57,6 +57,7 @@
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
     "intl": "1.2.5",
+    "eva-icons": "^1.1.0",
     "ionicons": "2.0.1",
     "nebular-icons": "1.1.0",
     "ng2-ckeditor": "^1.2.2",

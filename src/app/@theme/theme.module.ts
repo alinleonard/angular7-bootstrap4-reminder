@@ -56,7 +56,8 @@ import {
   PluralPipe,
   RoundPipe,
   TimingPipe,
-  NumberWithCommasPipe
+  NumberWithCommasPipe,
+  EvaIconsPipe
 } from './pipes';
 import {
   OneColumnLayoutComponent,
@@ -131,7 +132,8 @@ const PIPES = [
   PluralPipe,
   RoundPipe,
   TimingPipe,
-  NumberWithCommasPipe
+  NumberWithCommasPipe,
+  EvaIconsPipe
 ];
 
 const NB_THEME_PROVIDERS = [
