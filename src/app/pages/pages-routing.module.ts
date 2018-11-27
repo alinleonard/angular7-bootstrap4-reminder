@@ -16,11 +16,11 @@ const routes: Routes = [{
     },
     {
       path: 'auto',
-      loadChildren: './auto/auto.module#AutoModule'
+      loadChildren: './@sections/auto/auto.module#AutoModule'
     },
     {
       path: 'iot',
-      loadChildren: './iot/iot.module#IotModule'
+      loadChildren: './@sections/iot/iot.module#IotModule'
     },
     {
       path: '',
