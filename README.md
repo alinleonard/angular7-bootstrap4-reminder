@@ -1,4 +1,4 @@
-# Angular 6 with Bootstrap 4 (personal reminder app)
+# Angular 7+ with Bootstrap 4 (personal reminder app)
 
 [![Build Status](https://travis-ci.org/alinleonard/angular6-bootstrap4-reminder.svg?branch=master)](https://travis-ci.org/alinleonard/angular6-bootstrap4-reminder)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2359/badge)](https://bestpractices.coreinfrastructure.org/projects/2359)
@@ -12,10 +12,14 @@ separate but in the same place.
 
 ## What's included
 
-* Angular 6 with TypeScript
-* Bootstrap 4 & ng-bootstrap
+* Angular 7+ with TypeScript
+* Bootstrap 4 & SCSS
 * Nebular
-* SCSS
+
+## More on what's included
+
+- [Nebular](https://github.com/akveo/nebular) - Angular Components, Auth and Security
+- [Eva Icons](https://github.com/akveo/eva-icons) - 480+ beautiful Open Source icons
 
 ## Running the Application
 
