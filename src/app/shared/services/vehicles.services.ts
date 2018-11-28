@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 export interface Vehicle {
     _id: string;
@@ -31,23 +33,40 @@ const httpOptions = {
 export class VehiclesService {
     constructor(private http: HttpClient) { }
 
-    getList() {
-        return this.http.get<Vehicle[]>('http://localhost:8081/api/auto/vehicle');
+    baseUrl = 'http://localhost:8081/api/auto/vehicle';
+
+    getList(): Observable<Vehicle[]> {
+        return this.http.get<Vehicle[]>(this.baseUrl)
+            .pipe(catchError(this.handleError));
     }
 
     create(vehicle: Vehicle) {
-        return this.http.post<Vehicle>('http://localhost:8081/api/auto/vehicle', vehicle, httpOptions);
+        return this.http.post<Vehicle>(this.baseUrl, vehicle, httpOptions)
+            .pipe(catchError(this.handleError));
     }
 
     getById(Id) {
-        return this.http.get(`http://localhost:8081/api/auto/vehicle/${Id}`);
+        return this.http.get(`${this.baseUrl}/${Id}`)
+            .pipe(catchError(this.handleError));
     }
 
     update(vehicle: Vehicle) {
-        return this.http.put(`http://localhost:8081/api/auto/vehicle/${vehicle._id}`, vehicle, httpOptions);
+        return this.http.put(`${this.baseUrl}/${vehicle._id}`, vehicle, httpOptions)
+            .pipe(catchError(this.handleError));
     }
 
-    delete(Id) {
-        return this.http.delete(`http://localhost:8081/api/auto/vehicle/${Id}`);
+    delete(Id): Observable<void> {
+        return this.http.delete<void>(`${this.baseUrl}/${Id}`)
+            .pipe(catchError(this.handleError));
+    }
+
+    private handleError(errorResponse: HttpErrorResponse) {
+        if (errorResponse.error instanceof ErrorEvent) {
+            // console.log('Client side error', errorResponse.error);
+        } else {
+            // console.log('Service side error', errorResponse);
+        }
+
+        return throwError('There is a problem with the service');
     }
 }

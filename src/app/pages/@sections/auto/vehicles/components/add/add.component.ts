@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Vehicle, VehiclesService } from '../../../../../../shared/services/vehicles.services';
+import { ToastrComponent } from '../../../../../../shared/components/toastr/toastr.component';
+import { NbToastStatus } from '@nebular/theme/components/toastr/model';
 
 @Component({
   selector: 'ngx-add',
@@ -14,7 +16,7 @@ export class AddComponent implements OnInit {
   types = ['Car', 'Motocycle', 'Truck', 'Boat'];
   manufacturers = ['Audi', 'BMW', 'VW', 'Opel'];
 
-  constructor(fb: FormBuilder, private vehicleService: VehiclesService) {
+  constructor(fb: FormBuilder, private vehicleService: VehiclesService, private toastr: ToastrComponent) {
     this.form = fb.group({
       type: null,
       name: null,
@@ -55,6 +57,7 @@ export class AddComponent implements OnInit {
   }
 
   reset() {
+    this.toastr.showToast(NbToastStatus.SUCCESS, 'Success', 'Vehicle has been added succesfully!');
     this.form.reset();
   }
 

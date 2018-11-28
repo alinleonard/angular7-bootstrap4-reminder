@@ -1,11 +1,23 @@
 <!-- <nb-card [size]="breakpoint.width >= breakpoints.xxxl || breakpoint.width < breakpoints.md ? 'large' : 'xlarge'"> -->
-<nb-card>
+<nb-card [nbSpinner]="this.loading" nbSpinnerStatus="danger">
     <nb-tabset fullWith>
       <nb-tab tabTitle="Vehicles">
         <div (click)="showVehicleDetails(i)" class="vehicle" *ngFor="let v of vehicles; let i = index">
-          <ngx-item [name]="v.name" [title]="v.type" [editable]="true" (onSave)="save($event)"></ngx-item>
+          <ng-template #form>
+            <div class="p-4">
+                <p>
+                  Are you sure you want to delete {{v.name}} vehicle?
+                </p>
+                  <div class="btn-group">
+                      <button type="submit" class="btn btn-success" (click)="remove(v._id)">Yes</button>
+                      <button type="button" class="btn btn-danger" (click)="p.close()">No</button>
+                  </div>
+            </div>
+          </ng-template>
+          <ngx-item [name]="v.name" [title]="v.type" [editable]="true" (onSave)="save(v._id, $event)"></ngx-item>
           <div>
-            <i class="i-vehicle nb-trash" (click)="remove(v._id)"></i>
+            <i class="i-vehicle nb-edit" (click)="edit(v._id)"></i>
+            <i class="i-vehicle nb-trash" [ngbPopover]="form" #p="ngbPopover"></i>
             <i class="i-vehicle nb-star" [ngClass]="{'active': v.status}" (click)="toggleVehicleSection(i)"></i>
           </div>
         </div>

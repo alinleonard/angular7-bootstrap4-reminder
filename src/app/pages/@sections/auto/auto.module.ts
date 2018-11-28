@@ -13,11 +13,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { ItemModule } from '../../../shared/components/item/item.module';
 import { NotificationsComponent } from '../../../shared/components/notifications/notifications.component';
+import { ToastrComponent } from '../../../shared/components/toastr/toastr.component';
 
 const componets = [
   AutoComponent,
   DashboardComponent,
-  NotificationsComponent
+  NotificationsComponent,
+  ToastrComponent
 ];
 
 @NgModule({
@@ -31,7 +33,7 @@ const componets = [
     VehiclesModule,
     ActionsModule
   ],
-  providers: [],
+  providers: [ToastrComponent],
   declarations: [
     ...componets
   ],
