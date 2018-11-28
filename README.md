@@ -1,6 +1,6 @@
 # Angular 7+ with Bootstrap 4 (personal reminder app)
 
-[![Build Status](https://travis-ci.org/alinleonard/angular6-bootstrap4-reminder.svg?branch=master)](https://travis-ci.org/alinleonard/angular6-bootstrap4-reminder)
+[![Build Status](https://travis-ci.org/alinleonard/angular7-bootstrap4-reminder.svg?branch=master)](https://travis-ci.org/alinleonard/angular7-bootstrap4-reminder)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2359/badge)](https://bestpractices.coreinfrastructure.org/projects/2359)
 
 The goal of this app it's to keep my mental health in check with writting code.
