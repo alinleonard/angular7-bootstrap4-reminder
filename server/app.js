@@ -44,7 +44,7 @@ app.use(session({
 
 app.use('/api/auto', apiAuto);
 app.use('/api', api);
-app.use('/auth', auth);
+app.use('/api/auth', auth);
 
 // production error handler
 // no stacktraces leaked to user

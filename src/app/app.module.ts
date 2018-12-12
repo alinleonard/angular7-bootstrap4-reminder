@@ -17,6 +17,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ReactiveFormsModule } from '@angular/forms'
 
+import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
+import { Config } from './shared/config';
+import { AuthGuard } from './shared/guards/auth.guard';
+
 @NgModule({
   declarations: [ AppComponent ],
   imports: [
@@ -28,10 +32,32 @@ import { ReactiveFormsModule } from '@angular/forms'
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+          baseEndpoint: Config.apiUrl,
+          token: {
+            class: NbAuthJWTToken,
+            key: 'token'
+          },
+          login: {
+            endpoint: '/api/auth/login',
+            method: 'post'
+          },
+          register: {
+            endpoint: '/api/auth/register',
+            method: 'post'
+          }
+        })
+      ],
+      forms: {}
+    })
   ],
   bootstrap: [AppComponent],
   providers: [
+    AuthGuard,
     { provide: APP_BASE_HREF, useValue: '/' }
   ]
 })

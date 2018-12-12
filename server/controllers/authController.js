@@ -59,6 +59,7 @@ exports.login = function(req, res, next){
             user.comparePassword(password, function(err, isMatch) {
                 if (isMatch) {
                     const userJson = user.toJSON()
+                    console.log(`Loggen in with ${email}`);
                     return res.send({
                         user: userJson,
                         token: jwtSignUser(userJson)
