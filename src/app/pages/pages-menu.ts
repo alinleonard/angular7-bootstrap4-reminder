@@ -8,18 +8,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true
   },
   {
+    title: 'IoT',
+    group: true
+  },
+  {
     title: 'IoT Dashboard',
     icon: 'nb-home',
     link: '/pages/iot'
-  },
-  {
-    title: 'Auto',
-    icon: 'fa fa-parking',
-    link: '/pages/auto'
-  },
-  {
-    title: 'IoT',
-    group: true
   },
   {
     title: 'Devices',
@@ -29,6 +24,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'AUTO',
     group: true
+  },
+  {
+    title: 'Auto Dashboard',
+    icon: 'nb-home',
+    link: '/pages/auto'
   },
   {
     title: 'Vehicle',

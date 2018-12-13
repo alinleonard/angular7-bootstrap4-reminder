@@ -12,9 +12,8 @@ const config = require('./config');
 // =================================================================
 // routes ==========================================================
 // =================================================================
-var api = require('./routes/api');
-var auth = require('./routes/auth');
-var apiAuto = require('./@sections/auto/router/api');
+var api = require('./modules/core/routes/api');
+var apiAuto = require('./modules/auto/router/api');
 
 const app = express();
 
@@ -42,9 +41,11 @@ app.use(session({
   saveUninitialized: false // sessions are not stored if they are empty
 }));
 
-app.use('/api/auto', apiAuto);
+
 app.use('/api', api);
-app.use('/api/auth', auth);
+app.use('/api/auth', api);
+
+app.use('/api/auto', apiAuto);
 
 // production error handler
 // no stacktraces leaked to user
