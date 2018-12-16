@@ -2,12 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-export interface Vehicle {
-  _id: number;
-  type: string;
-  name: string;
-};
+import { Vehicle } from '../models/vehicle';
 
 export interface TypeOfExpenses {
   _id: string;

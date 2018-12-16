@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { Vehicle, VehiclesService } from '../../../../../shared/services/vehicles.services';
 import { ToastrComponent } from '../../../../../shared/components/toastr/toastr.component';
 import { NbToastStatus } from '@nebular/theme/components/toastr/model';
+import { VehiclesService } from '../../../../services/vehicle.service';
+import { Vehicle } from '../../../../models/vehicle';
 
 @Component({
   selector: 'ngx-add',

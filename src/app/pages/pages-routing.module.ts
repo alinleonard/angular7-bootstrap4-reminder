@@ -16,7 +16,7 @@ const routes: Routes = [{
     },
     {
       path: 'auto',
-      loadChildren: './auto/auto.module#AutoModule'
+      loadChildren: '../auto/pages/auto.module#AutoModule'
     },
     {
       path: 'iot',

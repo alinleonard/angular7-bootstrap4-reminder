@@ -4,7 +4,7 @@ import { interval } from 'rxjs/observable/interval';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AutoActionsServiceModalComponent } from './components/modal.component';
 import { LocationModalComponent } from './components/location-modal.component';
-import { AutoServicesService } from '../../../../../../../shared/services/auto-services.service';
+import { AutoServicesService } from '../../../../../../services/service.service';
 
 @Component({
   selector: 'ngx-add',

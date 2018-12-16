@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@ang
 import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-toaster';
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { state, trigger, style, transition, animate } from '@angular/animations';
-import { AutoRemindersService } from '../../../../../../../shared/services/auto-reminders.service';
+import { AutoRemindersService } from '../../../../../../services/reminder.service';
 
 enum ReminderTypes {
   Expense = 'Expense', Service = 'Service'

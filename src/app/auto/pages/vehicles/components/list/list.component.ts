@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@nebular/theme';
-import { VehiclesService, Vehicle } from '../../../../../shared/services/vehicles.services';
 import { ToastrComponent } from '../../../../../shared/components/toastr/toastr.component';
 import { NbToastStatus } from '@nebular/theme/components/toastr/model';
 import { Subscription, interval } from 'rxjs';
 import { takeWhile, switchMap } from 'rxjs/operators';
+import { VehiclesService } from '../../../../services/vehicle.service';
+import { Vehicle } from '../../../../models/vehicle';
 
 @Component({
   selector: 'ngx-list',

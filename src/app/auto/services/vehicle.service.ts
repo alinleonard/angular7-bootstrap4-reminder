@@ -2,22 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-export interface Vehicle {
-    _id: string;
-    type: string;
-    name: string;
-    manufacturer: string;
-    model: string;
-    plate: string;
-    year: string;
-    chasis: string;
-    vin: string;
-    note: string;
-    created: Date;
-
-    status: boolean
-}
+import { Vehicle } from '../models/vehicle';
 
 const httpOptions = {
     headers: new HttpHeaders({
