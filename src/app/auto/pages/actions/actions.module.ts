@@ -10,6 +10,8 @@ import { ActionsComponent } from './actions.component';
 
 import { RemindersModule } from './components/reminders/reminders.module';
 import { ServicesModule } from './components/services/services.module';
+import { OptionsModule } from './components/options/options.module';
+
 import { ActionsRoutingModule } from './actions-router.module';
 
 const componets = [
@@ -24,6 +26,7 @@ const componets = [
     ToasterModule.forRoot(),
     RemindersModule,
     ServicesModule,
+    OptionsModule,
     ActionsRoutingModule
   ],
   providers: [],

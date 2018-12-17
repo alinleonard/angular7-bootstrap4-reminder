@@ -51,16 +51,17 @@ export class AddComponent implements OnInit {
   }
 
   send() {
-    // console.log(this.form.value);
     const vehicle: Vehicle = this.form.value as Vehicle;
     this.vehicleService.create(vehicle)
-        .subscribe(() => this.reset());
+        .subscribe(() => this.success());
   }
 
   reset() {
-    this.toastr.showToast(NbToastStatus.SUCCESS, 'Success', 'Vehicle has been added succesfully!');
     this.form.reset();
   }
 
+  success() {
+    this.toastr.showToast(NbToastStatus.SUCCESS, 'Success', 'Vehicle has been added succesfully!');
+  }
 
 }

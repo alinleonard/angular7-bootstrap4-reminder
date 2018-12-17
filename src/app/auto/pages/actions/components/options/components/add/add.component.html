@@ -1,0 +1,36 @@
+<nb-card>
+<nb-card-header>Reminder</nb-card-header>
+<nb-card-body>
+  <form [formGroup]="form" (ngSubmit)="send()">
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">
+          <i [ngClass]="isTypeExpense ? 'fa-credit-card' : 'fa-oil-can'" class="fa"></i>
+      </label>
+      <div class="col-sm-11">
+        <ng-template #tooltipType>Select the type of reminder that this should be about</ng-template>
+        <select class="form-control" formControlName="type" [ngbTooltip]="tooltipType" required>
+          <option [value]='optionsReminder.Expense'>{{ optionsReminder.Expense }}</option>
+          <option [value]='optionsReminder.Service'>{{ optionsReminder.Service }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label">
+        <i class="fa fa-align-left"></i>
+      </label>
+      <div class="col-sm-11">
+        <input class="form-control" formControlName="name" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-11">
+        <div class="btn-group">
+          <button type="submit" class="btn btn-success" [disabled]="form.invalid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</nb-card-body>
+</nb-card>

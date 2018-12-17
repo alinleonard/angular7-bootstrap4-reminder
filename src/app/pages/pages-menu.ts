@@ -46,6 +46,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Services',
         link: '/pages/auto/actions/services'
+      },
+      {
+        title: 'Options',
+        link: '/pages/auto/actions/options'
       }
     ]
   },

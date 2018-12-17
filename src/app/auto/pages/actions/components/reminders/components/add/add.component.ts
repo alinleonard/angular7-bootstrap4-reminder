@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
-import { ToasterConfig, ToasterService, Toast, BodyOutputType  } from 'angular2-toaster';
-import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { state, trigger, style, transition, animate } from '@angular/animations';
-import { AutoRemindersService } from '../../../../../../services/reminder.service';
-
-enum ReminderTypes {
-  Expense = 'Expense', Service = 'Service'
-};
-
-enum RememberTypes {
-  Km = 'Km', Date = 'Date'
-}
+import { OptionService } from '../../../../../../services/option.service';
+import { ReminderService } from '../../../../../../services/reminder.service';
+import { ToastrComponent } from '../../../../../../../shared/components/toastr/toastr.component';
+import { Option } from '../../../../../../models/option';
+import { Reminder } from '../../../../../../models/reminder';
+import { NbToastStatus } from '@nebular/theme/components/toastr/model';
 
 @Component({
   selector: 'ngx-add',
@@ -33,43 +28,30 @@ export class AddComponent implements OnInit {
 
   public form: FormGroup;
 
-  reminderTypes = ReminderTypes;
-  rememberTypes = RememberTypes;
-  typeOfExpenses: any;
-  typeOfServices: any;
+  optionsReminder = { Expense: 'Expense', Service: 'Service' };
+  optionsRemember = { Km: 'Km', Date: 'Date' };
 
-  constructor(
-      private fb: FormBuilder,
-      private toasterService: ToasterService,
-      tooltipConfig: NgbTooltipConfig,
-      private autoRemindersService: AutoRemindersService) {
-    tooltipConfig.container = 'body';
-    tooltipConfig.placement = 'top';
+  optionExpensesList: Option[];
+  optionServiceList: Option[];
 
+  constructor(private fb: FormBuilder, private optionService: OptionService,
+     private reminderService: ReminderService, private toastr: ToastrComponent) {
     this.form = fb.group({
-      type: ReminderTypes.Expense,
+      type: this.optionsReminder.Expense,
       expense: null,
       service: null,
       repeat: null,
       items: this.fb.array([]),
       note: null
     });
-
-    this.getTypeOfExpenses();
-    this.getTypeOfServices();
   }
 
   ngOnInit() {
-  }
+    this.optionService.getExpensesList()
+      .subscribe(expenses => this.optionExpensesList = expenses);
 
-  getTypeOfExpenses(): void {
-    this.autoRemindersService.getExpenses()
-      .subscribe(expenses => this.typeOfExpenses = expenses);
-  }
-
-  getTypeOfServices(): void {
-    this.autoRemindersService.getServices()
-      .subscribe(services => this.typeOfServices = services);
+    this.optionService.getServicesList()
+        .subscribe(services => this.optionServiceList = services);
   }
 
   get type() {
@@ -77,15 +59,21 @@ export class AddComponent implements OnInit {
   }
 
   get isTypeExpense() {
-    return (this.type.value === ReminderTypes.Expense.toString()) ? true : false;
+    return (this.type.value === this.optionsReminder.Expense.toString()) ? true : false;
+  }
+
+  send(): void {
+    const reminder: Reminder = this.form.value as Reminder;
+    this.reminderService.create(reminder)
+      .subscribe(() => this.success());
   }
 
   reset(): void {
     this.form.reset();
   }
 
-  send(): void {
-    // console.log(this.form.value);
+  success() {
+    this.toastr.showToast(NbToastStatus.SUCCESS, 'Success', 'Reminder has been added succesfully!');
   }
 
   /**
@@ -120,56 +108,4 @@ export class AddComponent implements OnInit {
     control.removeAt(i);
   }
 
-  /**
-   * Methods regarding toast configuration
-   */
-  toasterConfig: ToasterConfig;
-
-  toasterPosition = 'toast-top-right';
-  toasterAnimation = 'fade';
-  toasterTimeout = 5000;
-  toasterLimit = 5;
-
-  toasterIsNewestOnTop = true;
-  toasterIsHideOnClick = true;
-  toasterIsDuplicatesPrevented = false;
-  toasterIsCloseButton = true;
-
-  toasterTitle = 'Hi there!';
-  toasterType = 'default';
-  toasterContent = `I'm a cool toaster!`;
-
-  toasterTypes: string[] = ['default', 'info', 'success', 'warning', 'error'];
-  toasterAnimations: string[] = ['fade', 'flyLeft', 'flyRight', 'slideDown', 'slideUp'];
-
-  makeToast() {
-    this.showToast(this.toasterType, this.toasterTitle, this.toasterContent);
-  }
-
-  private showToast(type: string, title: string, body: string) {
-    this.toasterConfig = new ToasterConfig({
-      positionClass: this.toasterPosition,
-      timeout: this.toasterTimeout,
-      newestOnTop: this.toasterIsNewestOnTop,
-      tapToDismiss: this.toasterIsHideOnClick,
-      preventDuplicates: this.toasterIsDuplicatesPrevented,
-      animation: this.toasterAnimation,
-      limit: this.toasterLimit
-    });
-
-    const toast: Toast = {
-      type: type,
-      title: title,
-      body: body,
-      timeout: this.toasterTimeout,
-      showCloseButton: this.toasterIsCloseButton,
-      bodyOutputType: BodyOutputType.TrustedHtml
-    }
-
-    this.toasterService.popAsync(toast);
-  }
-
-  clearToasts() {
-    this.toasterService.clear();
-  }
 }

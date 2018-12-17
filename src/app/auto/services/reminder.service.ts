@@ -1,23 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Vehicle } from '../models/vehicle';
-
-export interface TypeOfExpenses {
-  _id: string;
-  value: string;
-}
-
-export interface TypeOfServices {
-  _id: string;
-  value: string;
-}
+import { Reminder } from '../models/reminder';
+import { HandleError } from '../../shared/services/handleError';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    'Content-Type':  'application/json'
+    //   'Authorization': 'my-auth-token'
   })
 };
 
@@ -25,39 +16,34 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class AutoRemindersService {
-  apiUrl = 'assets';
+export class ReminderService {
+
+  baseUrl = 'http://localhost:8081/api/auto/reminder';
+
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      throwError(`An error occured: ${error.error.message}`);
-    } else {
-      throwError(
-        `Backend returned code ${error.status}` +
-        `body was: ${error.error}`
-      );
-    }
-
-    return throwError('Something bad happend; please try again later');
+  getList(): Observable<Reminder[]> {
+    return this.http.get<Reminder[]>(this.baseUrl)
+    .pipe(catchError(HandleError.handleError));
   }
 
-  getExpenses() {
-    return this.http.get(`${this.apiUrl}/expenses.json`)
+  create(reminder: Reminder): Observable<Reminder> {
+    return this.http.post<Reminder>(this.baseUrl, reminder, httpOptions)
+    .pipe(catchError(HandleError.handleError));
   }
 
-  getServices() {
-    return this.http.get(`${this.apiUrl}/services.json`)
+  getById(Id): Observable<Reminder> {
+    return this.http.get<Reminder>(`${this.baseUrl}/${Id}`)
+    .pipe(catchError(HandleError.handleError));
   }
 
-  getVehicles() {
-    return this.http.get(`${this.apiUrl}/vehicles.json`);
+  update(reminder: Reminder): Observable<Reminder> {
+    return this.http.put<Reminder>(`${this.baseUrl}/${reminder._id}`, reminder, httpOptions)
+    .pipe(catchError(HandleError.handleError));
   }
 
-  postVehicle(vehicle: Vehicle): Observable<Vehicle> {
-    return this.http.post<Vehicle>(this.apiUrl, vehicle, httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      )
+  delete(Id): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${Id}`)
+      .pipe(catchError(HandleError.handleError));
   }
 }

@@ -9,8 +9,8 @@
       <div class="col-sm-11">
         <ng-template #tooltipType>Select the type of reminder that this should be about</ng-template>
         <select class="form-control" formControlName="type" [ngbTooltip]="tooltipType" required>
-          <option [value]='reminderTypes.Expense'>{{ reminderTypes.Expense }}</option>
-          <option [value]='reminderTypes.Service'>{{ reminderTypes.Service }}</option>
+          <option [value]='optionsReminder.Expense'>{{ optionsReminder.Expense }}</option>
+          <option [value]='optionsReminder.Service'>{{ optionsReminder.Service }}</option>
         </select>
       </div>
     </div>
@@ -20,12 +20,12 @@
       </label>
       <div class="col-sm-11" [ngSwitch]="type.value">
         <ng-template #tooltipExpense>Select the expense that you will need to have on your vehicle</ng-template>
-        <select *ngSwitchCase="reminderTypes.Expense" class="form-control" formControlName="expense" [ngbTooltip]="tooltipExpense">
-          <option *ngFor="let type of typeOfExpenses" [value]="type.value">{{ type.value }}</option>
+        <select *ngSwitchCase="optionsReminder.Expense" class="form-control" formControlName="expense" [ngbTooltip]="tooltipExpense">
+          <option *ngFor="let type of optionExpensesList" [value]="type.name">{{ type.name }}</option>
         </select>
         <ng-template #tooltipService>Select the service you will need to have on your vehicle</ng-template>
-        <select *ngSwitchCase="reminderTypes.Service" class="form-control" formControlName="service" [ngbTooltip]="tooltipService">
-          <option *ngFor="let type of typeOfServices" [value]="type.value">{{ type.value }}</option>
+        <select *ngSwitchCase="optionsReminder.Service" class="form-control" formControlName="service" [ngbTooltip]="tooltipService">
+          <option *ngFor="let type of optionServiceList" [value]="type.name">{{ type.name }}</option>
         </select>
       </div>
     </div>
@@ -52,8 +52,8 @@
             Trigger
           </button>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li class="dropdown-item" (click)="addItem(rememberTypes.Km)">Remember by Km</li>
-            <li class="dropdown-item" (click)="addItem(rememberTypes.Date)">Remember by Date</li>
+            <li class="dropdown-item" (click)="addItem(optionsRemember.Km)">Remember by Km</li>
+            <li class="dropdown-item" (click)="addItem(optionsRemember.Date)">Remember by Date</li>
           </ul>
         </div>
       </label>
@@ -70,10 +70,10 @@
             </div>
           </div>
           <div class="col-sm-6" [ngSwitch]="form.controls['items'].controls[i].controls.trigger.value">
-            <div class="input-group" *ngSwitchCase="rememberTypes.Km">
+            <div class="input-group" *ngSwitchCase="optionsRemember.Km">
               <input formControlName="mileage" type="text" class="form-control" placeholder="Odometere (km)">
             </div>
-            <div class="input-group" *ngSwitchCase="rememberTypes.Date">
+            <div class="input-group" *ngSwitchCase="optionsRemember.Date">
               <input formControlName="date" type="date" class="form-control">
             </div>
           </div>

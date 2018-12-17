@@ -1,0 +1,45 @@
+<nb-card [nbSpinner]="this.loading" nbSpinnerStatus="danger">
+    <nb-tabset fullWith>
+        <nb-tab tabTitle="Expense">
+        <div class="vehicle" *ngFor="let v of optionExpenseList; let i = index">
+            <ng-template #form>
+            <div class="p-4">
+                <p>
+                    Are you sure you want to delete {{v.name}}?
+                </p>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-success" (click)="removeOptionExpense(v._id)">Yes</button>
+                        <button type="button" class="btn btn-danger" (click)="p.close()">No</button>
+                    </div>
+            </div>
+            </ng-template>
+            <ngx-item [name]="v.name" [title]="v.name" [editable]="true" (onSave)="saveOptionExpense(v._id, $event)"></ngx-item>
+            <div>
+            <i class="i-vehicle nb-edit" (click)="edit(v._id)"></i>
+            <i class="i-vehicle nb-trash" [ngbPopover]="form" #p="ngbPopover"></i>
+            </div>
+        </div>
+        </nb-tab>
+
+        <nb-tab tabTitle="Service">
+        <div class="vehicle" *ngFor="let v of optionServiceList; let i = index">
+            <ng-template #form>
+            <div class="p-4">
+                <p>
+                    Are you sure you want to delete {{v.name}}?
+                </p>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-success" (click)="removeOptionService(v._id)">Yes</button>
+                        <button type="button" class="btn btn-danger" (click)="p.close()">No</button>
+                    </div>
+            </div>
+            </ng-template>
+            <ngx-item [name]="v.name" [title]="v.name" [editable]="true" (onSave)="saveOptionService(v._id, $event)"></ngx-item>
+            <div>
+            <i class="i-vehicle nb-edit" (click)="edit(v._id)"></i>
+            <i class="i-vehicle nb-trash" [ngbPopover]="form" #p="ngbPopover"></i>
+            </div>
+        </div>
+        </nb-tab>
+    </nb-tabset> 
+</nb-card>
