@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { state, trigger, style, transition, animate } from '@angular/animations';
 import { OptionService } from '../../../../../../services/option.service';
 import { ReminderService } from '../../../../../../services/reminder.service';
@@ -34,14 +34,17 @@ export class AddComponent implements OnInit {
   optionExpensesList: Option[];
   optionServiceList: Option[];
 
-  constructor(private fb: FormBuilder, private optionService: OptionService,
+  constructor(fb: FormBuilder, private optionService: OptionService,
      private reminderService: ReminderService, private toastr: ToastrComponent) {
     this.form = fb.group({
       type: this.optionsReminder.Expense,
-      expense: null,
-      service: null,
+      name: null,
       repeat: null,
-      items: this.fb.array([]),
+      trigger: fb.group({
+        tempTriggerTypeNoDatabase: null,
+        tachometer: '',
+        date: ''
+      }),
       note: null
     });
   }
@@ -62,6 +65,10 @@ export class AddComponent implements OnInit {
     return (this.type.value === this.optionsReminder.Expense.toString()) ? true : false;
   }
 
+  get triggerType() {
+    return this.form.get('trigger').get('tempTriggerTypeNoDatabase') as FormControl;
+  }
+
   send(): void {
     const reminder: Reminder = this.form.value as Reminder;
     this.reminderService.create(reminder)
@@ -74,38 +81,26 @@ export class AddComponent implements OnInit {
 
   success() {
     this.toastr.showToast(NbToastStatus.SUCCESS, 'Success', 'Reminder has been added succesfully!');
+    this.reset();
   }
 
   /**
    * Methods with interest on the remember by select option
    */
 
-  createItem(): FormGroup {
-    return this.fb.group({
-      trigger: new FormControl({value: 'Km', disabled: true}, Validators.required),
-      mileage: '',
-      date: ''
-    });
-  }
 
   addItem(triggerType: string): void {
-    const control = <FormArray>this.form.controls.items;
-    const formItem = this.createItem();
     // set the rememberOf value
-    if (!control.controls.find(item => item.get('trigger').value === triggerType)) {
-      formItem.controls.trigger.setValue(triggerType);
+    if (this.triggerType.value !== triggerType) {
+      this.triggerType.setValue(triggerType);
     } else {
       return;
     }
-    // validation to maximum number of options available
-    if (control.length < 2) {
-      control.push(formItem);
-    }
   }
 
-  removeItem(i): void {
-    const control = <FormArray>this.form.controls.items;
-    control.removeAt(i);
+  removeItem(): void {
+    const control = this.form.controls.trigger;
+    control.reset();
   }
 
 }

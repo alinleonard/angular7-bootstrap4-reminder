@@ -1,101 +1,101 @@
 <nb-card size="large">
-<nb-card-header>Reminder</nb-card-header>
-<nb-card-body>
-  <form [formGroup]="form" (ngSubmit)="send()">
-    <div class="form-group row">
-      <label class="col-sm-1 col-form-label">
-          <i [ngClass]="isTypeExpense ? 'fa-credit-card' : 'fa-oil-can'" class="fa"></i>
-      </label>
-      <div class="col-sm-11">
-        <ng-template #tooltipType>Select the type of reminder that this should be about</ng-template>
-        <select class="form-control" formControlName="type" [ngbTooltip]="tooltipType" required>
-          <option [value]='optionsReminder.Expense'>{{ optionsReminder.Expense }}</option>
-          <option [value]='optionsReminder.Service'>{{ optionsReminder.Service }}</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row" *ngIf="type?.value">
-      <label class="col-sm-1 col-form-label">
-        <i [ngClass]="isTypeExpense ? 'fa-money-bill' : 'fa-wrench'" class="fa"></i>
-      </label>
-      <div class="col-sm-11" [ngSwitch]="type.value">
-        <ng-template #tooltipExpense>Select the expense that you will need to have on your vehicle</ng-template>
-        <select *ngSwitchCase="optionsReminder.Expense" class="form-control" formControlName="expense" [ngbTooltip]="tooltipExpense">
-          <option *ngFor="let type of optionExpensesList" [value]="type.name">{{ type.name }}</option>
-        </select>
-        <ng-template #tooltipService>Select the service you will need to have on your vehicle</ng-template>
-        <select *ngSwitchCase="optionsReminder.Service" class="form-control" formControlName="service" [ngbTooltip]="tooltipService">
-          <option *ngFor="let type of optionServiceList" [value]="type.name">{{ type.name }}</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-1 col-form-label"><i class="fa fa-bell"></i></label>
-      <div class="col-sm-11">
-        <ng-template #tooltipRepeat>Pick the number of times this action would be repeated</ng-template>
-        <div ngbRadioGroup class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
-          <label ngbButtonLabel class="btn btn-outline-primary">
-            <input ngbButton type="radio" value="one"> One time
+    <nb-card-header>Reminder</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="form" (ngSubmit)="send()">
+        <div class="form-group row">
+          <label class="col-sm-1 col-form-label">
+              <i [ngClass]="isTypeExpense ? 'fa-credit-card' : 'fa-oil-can'" class="fa"></i>
           </label>
-          <label ngbButtonLabel class="btn btn-outline-primary">
-            <input ngbButton type="radio" value="multiple"> Multiple times
+          <div class="col-sm-11">
+            <ng-template #tooltipType>Select the type of reminder that this should be about</ng-template>
+            <select class="form-control" formControlName="type" [ngbTooltip]="tooltipType" required>
+              <option [value]='optionsReminder.Expense'>{{ optionsReminder.Expense }}</option>
+              <option [value]='optionsReminder.Service'>{{ optionsReminder.Service }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row" *ngIf="type?.value">
+          <label class="col-sm-1 col-form-label">
+            <i [ngClass]="isTypeExpense ? 'fa-money-bill' : 'fa-wrench'" class="fa"></i>
           </label>
+          <div class="col-sm-11" [ngSwitch]="type.value">
+            <ng-template #tooltipExpense>Select the expense that you will need to have on your vehicle</ng-template>
+            <select *ngSwitchCase="optionsReminder.Expense" class="form-control" formControlName="name" [ngbTooltip]="tooltipExpense">
+              <option *ngFor="let type of optionExpensesList" [value]="type.name">{{ type.name }}</option>
+            </select>
+            <ng-template #tooltipService>Select the service you will need to have on your vehicle</ng-template>
+            <select *ngSwitchCase="optionsReminder.Service" class="form-control" formControlName="name" [ngbTooltip]="tooltipService">
+              <option *ngFor="let type of optionServiceList" [value]="type.name">{{ type.name }}</option>
+            </select>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-1"></label>
-      <label class="col-sm-11">
-        <ng-template #tooltipTriggerType>Select the trigger that will notify you when this action needs to happen</ng-template>
-        <div class="dropdown" ngbDropdown autoClose="true">
-          <button class="btn btn-primary" type="button" ngbDropdownToggle>
-            Trigger
-          </button>
-          <ul class="dropdown-menu" ngbDropdownMenu>
-            <li class="dropdown-item" (click)="addItem(optionsRemember.Km)">Remember by Km</li>
-            <li class="dropdown-item" (click)="addItem(optionsRemember.Date)">Remember by Date</li>
-          </ul>
+        <div class="form-group row">
+          <label class="col-sm-1 col-form-label"><i class="fa fa-bell"></i></label>
+          <div class="col-sm-11">
+            <ng-template #tooltipRepeat>Pick the number of times this action would be repeated</ng-template>
+            <div ngbRadioGroup class="btn-group btn-group-toggle btn-outline-toggle-group btn-group-full-width btn-toggle-radio-group">
+              <label ngbButtonLabel class="btn btn-outline-primary">
+                <input ngbButton type="radio" formControlName="repeat" value="false"> One time
+              </label>
+              <label ngbButtonLabel class="btn btn-outline-primary">
+                <input ngbButton type="radio" formControlName="repeat" value="true"> Multiple times
+              </label>
+            </div>
+          </div>
         </div>
-      </label>
-    </div>
-    <div [@fadeAnimation]="'in'" formArrayName="items" *ngFor="let item of form.controls['items']['controls']; let i = index">
-      <div class="form-group row" [formGroupName]="i" >
+        <div class="form-group row">
           <label class="col-sm-1"></label>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-default" (click)="removeItem(i)"><i class="fa fa-trash"></i></button>
-          </div>
-          <div class="col-sm-3">
-            <div class="input-group">
-              <input class="form-control" formControlName="trigger"/> 
+          <label class="col-sm-11">
+            <ng-template #tooltipTriggerType>Select the trigger that will notify you when this action needs to happen</ng-template>
+            <div class="dropdown" ngbDropdown autoClose="true">
+              <button class="btn btn-primary" type="button" ngbDropdownToggle>
+                Trigger
+              </button>
+              <ul class="dropdown-menu" ngbDropdownMenu>
+                <li class="dropdown-item" (click)="addItem(optionsRemember.Km)">Remember by Km</li>
+                <li class="dropdown-item" (click)="addItem(optionsRemember.Date)">Remember by Date</li>
+              </ul>
             </div>
-          </div>
-          <div class="col-sm-6" [ngSwitch]="form.controls['items'].controls[i].controls.trigger.value">
-            <div class="input-group" *ngSwitchCase="optionsRemember.Km">
-              <input formControlName="mileage" type="text" class="form-control" placeholder="Odometere (km)">
+          </label>
+        </div>
+        <div [@fadeAnimation]="'in'" formArrayName="trigger" *ngIf="triggerType?.value">
+          <div class="form-group row" >
+              <label class="col-sm-1"></label>
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-default" (click)="removeItem(1)"><i class="fa fa-trash"></i></button>
+              </div>
+              <div class="col-sm-3">
+                <div class="input-group">
+                  <input class="form-control" formControlName="tempTriggerTypeNoDatabase"/> 
+                </div>
+              </div>
+              <div class="col-sm-6" [ngSwitch]="triggerType.value">
+                <div class="input-group" *ngSwitchCase="optionsRemember.Km">
+                  <input formControlName="tachometer" type="text" class="form-control" placeholder="Odometere (km)">
+                </div>
+                <div class="input-group" *ngSwitchCase="optionsRemember.Date">
+                  <input formControlName="date" type="date" class="form-control">
+                </div>
+              </div>
             </div>
-            <div class="input-group" *ngSwitchCase="optionsRemember.Date">
-              <input formControlName="date" type="date" class="form-control">
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-1 col-form-label">
+            <i class="fa fa-align-left"></i>
+          </label>
+          <div class="col-sm-11">
+            <textarea class="form-control" rows="5" formControlName="note" placeholder="Note"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-11">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-success" [disabled]="form.invalid">Save</button>
+              <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
             </div>
           </div>
         </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-1 col-form-label">
-        <i class="fa fa-align-left"></i>
-      </label>
-      <div class="col-sm-11">
-        <textarea class="form-control" rows="5" placeholder="Note"></textarea>
-      </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-11">
-        <div class="btn-group">
-          <button type="submit" class="btn btn-success" [disabled]="form.invalid">Save</button>
-          <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
-        </div>
-      </div>
-    </div>
-  </form>
-</nb-card-body>
-</nb-card>
+      </form>
+    </nb-card-body>
+    </nb-card>

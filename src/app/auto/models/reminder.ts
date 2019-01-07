@@ -5,10 +5,10 @@ export class Reminder {
 
     type: string;
     name: string;
-    repeat: string;
+    repeat: boolean;
     trigger: {
-        tachometer: number;
-        date: Date;
+        tachometer?: number;
+        date?: Date;
     }
     note: string
 
