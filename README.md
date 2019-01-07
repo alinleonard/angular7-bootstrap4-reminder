@@ -1,5 +1,6 @@
 # Angular 7+ with Bootstrap 4 (personal reminder app)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dc64e86818404e5783deaf402ededd32)](https://app.codacy.com/app/alinleonard/angular7-bootstrap4-reminder?utm_source=github.com&utm_medium=referral&utm_content=alinleonard/angular7-bootstrap4-reminder&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/alinleonard/angular7-bootstrap4-reminder.svg?branch=master)](https://travis-ci.org/alinleonard/angular7-bootstrap4-reminder)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2359/badge)](https://bestpractices.coreinfrastructure.org/projects/2359)
 
