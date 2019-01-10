@@ -5,6 +5,8 @@ var userController = require('../controllers/userController.js');
 var authController = require('../controllers/authController.js');
 var authMiddleware = require('../../shared/middleware/authMiddleware.js');
 
+var uploadController = require('../controllers/uploadController.js');
+
 router.get('/', function (req, res) {
 	res.status(200).send({ message : "API server online" });
 });
@@ -32,5 +34,13 @@ router.route('/reset')
 
 router.route('/changePassword')
 	.post(authMiddleware.isAuthenticated, authController.changePassword)
+
+router.route('/upload')
+	.get(authMiddleware.isAuthenticated, uploadController.getList)
+	
+router.route('/upload/:id')
+	.get(authMiddleware.isAuthenticated, uploadController.getById)
+	.put(authMiddleware.isAuthenticated, uploadController.update)
+	.delete(authMiddleware.isAuthenticated, uploadController.delete);
 
 module.exports = router;
