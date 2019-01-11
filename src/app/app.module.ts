@@ -21,8 +21,11 @@ import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken } from '@nebular/a
 import { Config } from './shared/config';
 import { AuthGuard } from './shared/guards/auth.guard';
 
+import { FileDropDirective } from './shared/directives/file-drop.directive';
+import { UploadFormComponent } from './shared/components/upload-form/upload-form.component';
+
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, FileDropDirective, UploadFormComponent ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
