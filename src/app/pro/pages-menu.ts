@@ -12,19 +12,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true
   },
   {
-    title: 'Pro docs',
-    group: true
-  },
-  {
     title: 'Pro',
-    link: '/pro/'
-  },
-  {
-    title: 'Fleet Management',
     group: true
   },
   {
-    title: 'Fleet Manage',
-    link: '/fleet-manage/'
-  }
+    title: 'Components',
+    icon: 'nb-keypad',
+    children: [
+      {
+        title: 'Breadcrumb',
+        link: '/pro/components/breadcrumb'
+      }
+    ]
+  },
+
 ];

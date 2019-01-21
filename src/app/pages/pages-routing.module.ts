@@ -15,10 +15,6 @@ const routes: Routes = [{
       component: DashboardComponent
     },
     {
-      path: 'auto',
-      loadChildren: '../auto/pages/auto.module#AutoModule'
-    },
-    {
       path: 'iot',
       loadChildren: './iot/iot.module#IotModule'
     },

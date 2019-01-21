@@ -1,0 +1,45 @@
+<nb-card>
+    <nb-card-body>
+        <h1>
+            Overview
+        </h1>
+        <p>
+            A breadcrumb navigation provides links back to each previous page the user navigated through and shows the current location in a website or an application.
+            You don’t have to add separators, because they automatically added in CSS through <mark>::before</mark> and <mark>content.</mark>
+        </p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+        </nav>
+              
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">CoreUI</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+        
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">CoreUI</a></li>
+                <li class="breadcrumb-item"><a href="#">Profile</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+
+        <pre>
+            <code [innerHTML]="breadcrumb_overview" class="language-html"></code>
+        </pre>
+        
+        <nav class="breadcrumb">
+            <a class="breadcrumb-item" href="#">CoreUI</a>
+            <a class="breadcrumb-item" href="#">Profile</a>
+            <a class="breadcrumb-item" href="#">Data</a>
+            <span class="breadcrumb-item active">Details</span>
+        </nav>
+    </nb-card-body>
+</nb-card>
+<pre>
+    <code [innerHTML]="breadcrumb_overview" class="language-html"></code>
+</pre>

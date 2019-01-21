@@ -13,7 +13,7 @@ const config = require('./config');
 // routes ==========================================================
 // =================================================================
 var api = require('./modules/core/routes/api');
-var apiAuto = require('./modules/auto/router/api');
+var fleet_manageAPI = require('./modules/fleet-manage/router/api');
 
 const app = express();
 
@@ -45,7 +45,7 @@ app.use(session({
 app.use('/api', api);
 app.use('/api/auth', api);
 
-app.use('/api/auto', apiAuto);
+app.use('/api/fleet-manage', fleet_manageAPI);
 
 // production error handler
 // no stacktraces leaked to user

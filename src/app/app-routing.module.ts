@@ -15,7 +15,17 @@ const routes: Routes = [
     path: 'pages',
     canActivate: [AuthGuard],
     loadChildren: 'app/pages/pages.module#PagesModule'
-   },
+  },
+  {
+    path: 'pro',
+    canActivate: [AuthGuard],
+    loadChildren: 'app/pro/pro.module#ProModule'
+  },
+  {
+    path: 'fleet-manage',
+    canActivate: [AuthGuard],
+    loadChildren: 'app/fleet-manage/fleet-manage.module#FleetManageModule'
+  },
   {
     path: 'auth',
     component: NbAuthComponent,

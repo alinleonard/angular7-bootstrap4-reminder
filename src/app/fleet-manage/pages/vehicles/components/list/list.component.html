@@ -1,0 +1,15 @@
+<nb-card>
+  <nb-card-header>
+    <span>Vehicle List</span>
+    <div class="right-header dropdown" ngbDropdown>
+      <button nbButton shape="rectangle" size="small" status="info" class="dropdown-button" id="dropdownActions" ngbDropdownToggle>Actions</button>
+      <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownActions">
+        <!-- <li class="dropdown-item">test</li> -->
+      </ul>
+      <button routerLink="/fleet-manage/vehicles/add" nbButton shape="rectangle" size="small" status="success">Add Vehicle</button>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onEditConfirm($event)"></ng2-smart-table>
+  </nb-card-body>
+</nb-card>

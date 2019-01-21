@@ -1,0 +1,8 @@
+@import '../../../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+.text-link {
+    color: nb-theme(link-color);
+  }
+}
