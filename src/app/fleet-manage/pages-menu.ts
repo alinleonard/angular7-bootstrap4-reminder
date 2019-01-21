@@ -26,7 +26,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Vehicle Renewals',
         link: '/fleet-manage/reminders/renewal/list'
-      },
+      }
     ]
   },
   {

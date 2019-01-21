@@ -14,7 +14,7 @@ import { ProRoutingModule } from './pro-router.module';
         ThemeModule,
         HttpClientModule,
         ProRoutingModule,
-        ToasterModule.forRoot(),
+        ToasterModule.forRoot()
     ],
     providers: [ToastrComponent],
     declarations: [

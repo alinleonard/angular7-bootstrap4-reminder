@@ -45,14 +45,14 @@ export class VehiclesService {
 
     update(vehicle: Vehicle) {
         const endPoint = 'vehicle';
-        
+
         return this.http.put(`${this.baseUrl}${endPoint}/${vehicle._id}`, vehicle, httpOptions)
             .pipe(catchError(HandleError.handleError));
     }
 
     delete(Id): Observable<void> {
         const endPoint = 'vehicle';
-        
+
         return this.http.delete<void>(`${this.baseUrl}${endPoint}/${Id}`)
             .pipe(catchError(HandleError.handleError));
     }

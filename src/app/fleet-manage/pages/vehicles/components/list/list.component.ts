@@ -94,7 +94,7 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   onEditConfirm(event): void {
-    const vehicle: Vehicle = this.vehicles.find(x => x._id == event.data['_id']);
+    const vehicle: Vehicle = this.vehicles.find(x => x._id === event.data['_id']);
     // const newValueName = event.newData['name'];
     // vehicle.name = newValueName;
     vehicle.name = event.newData['name'];

@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { VehiclesService } from "../../../../services/vehicle.service";
-import { Vehicle } from "../../../../models/vehicle";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { VehiclesService } from '../../../../services/vehicle.service';
+import { Vehicle } from '../../../../models/vehicle';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'ngx-view',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from "@angular/router";
     styleUrls: ['./view.component.scss']
 })
 
-export class ViewComponent implements OnInit{
+export class ViewComponent implements OnInit, OnDestroy {
     private sub: any;
     v: Vehicle;
 
@@ -21,7 +21,7 @@ export class ViewComponent implements OnInit{
     ngOnInit(): void {
         // subscribe to the route params
         this.sub = this.route.params.subscribe(params => {
-            let id = params['id'];
+            const id = params['id'];
             this.vehicleService.getById(id).subscribe(vehicle => this.v = vehicle);
         })
     }

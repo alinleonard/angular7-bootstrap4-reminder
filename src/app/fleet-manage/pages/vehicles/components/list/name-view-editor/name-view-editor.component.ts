@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
-import { DefaultEditor } from "ng2-smart-table";
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { DefaultEditor } from 'ng2-smart-table';
 
 @Component({
     template: `
@@ -51,5 +51,4 @@ export class NameViewEditorComponent extends DefaultEditor implements AfterViewI
     getPlate() {
         return this.cell.getValue().plate
     }
-
 }

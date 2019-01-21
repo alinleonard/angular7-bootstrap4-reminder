@@ -1,5 +1,5 @@
-import { Component, Input, Output, OnInit } from "@angular/core";
-import { ViewCell } from "ng2-smart-table";
+import { Component, Input, Output, OnInit } from '@angular/core';
+import { ViewCell } from 'ng2-smart-table';
 
 @Component({
     selector: 'ngx-name-view',

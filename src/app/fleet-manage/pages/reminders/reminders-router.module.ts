@@ -1,17 +1,17 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { RemindersComponent } from "./reminders.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RemindersComponent } from './reminders.component';
 
-import { RenewalAddComponent } from "./renewal-add/renewal-add.component";
-import { RenewalListComponent } from "./renewal-list/renewal-list.component";
-import { ServiceAddComponent } from "./service-add/service-add.component";
-import { ServiceListComponent } from "./service-list/service-list.component";
+import { RenewalAddComponent } from './renewal-add/renewal-add.component';
+import { RenewalListComponent } from './renewal-list/renewal-list.component';
+import { ServiceAddComponent } from './service-add/service-add.component';
+import { ServiceListComponent } from './service-list/service-list.component';
 
 const routes: Routes = [{
     path: '',
     component: RemindersComponent,
     children: [
-        { 
+        {
             path: 'renewal/add/:id',
             component: RenewalAddComponent
         },
@@ -19,7 +19,7 @@ const routes: Routes = [{
             path: 'renewal/list',
             component: RenewalListComponent
         },
-        { 
+        {
             path: 'service/add',
             component: ServiceAddComponent
         },
@@ -28,7 +28,7 @@ const routes: Routes = [{
             component: ServiceListComponent
         }
     ]
-}] 
+}]
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],

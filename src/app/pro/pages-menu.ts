@@ -24,6 +24,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pro/components/breadcrumb'
       }
     ]
-  },
+  }
 
 ];

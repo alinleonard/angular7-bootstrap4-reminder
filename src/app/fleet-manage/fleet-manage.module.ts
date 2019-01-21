@@ -14,7 +14,7 @@ import { ToasterModule } from 'angular2-toaster';
         ThemeModule,
         HttpClientModule,
         FleetManageRoutingModule,
-        ToasterModule.forRoot(),
+        ToasterModule.forRoot()
     ],
     providers: [ToastrComponent],
     declarations: [
